@@ -37,7 +37,7 @@ COLOR_SCHEME = {
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="When given a file like produced by pymot and the corresponding video"
-                                                 "the tracking results are displayed.")
+                                                 "the tracking mot_fmt_results are displayed.")
 
 
     parser.add_argument("debugfile", help="Path to Inputfile, "

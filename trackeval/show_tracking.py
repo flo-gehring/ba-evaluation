@@ -1,10 +1,12 @@
-
 import cv2
 import csv
 import random
 
 
 ID_COLOR_MAP = dict()
+
+
+print("Use with python2.7 if this does not work. Weird conflict with qt.")
 
 
 def get_color_by_id(id):
@@ -24,15 +26,12 @@ def get_color_by_id(id):
             return color
 
 
-def show_tracking(videopath, mot_path, savepath='', show=False):
+def show_tracking(videopath, mot_path, savepath='', show=False, delimiter='\t'):
 
     videocapture = cv2.VideoCapture(videopath)
     mot_file = open(mot_path, "r")
-
-    mot_reader = csv.reader(mot_file, delimiter='\t')
-
-    print(videocapture.get(cv2.CAP_PROP_FPS))
-
+    window_name = "Video"
+    mot_reader = csv.reader(mot_file, delimiter=delimiter)
     videowriter = None
     if savepath != '':
         videowriter = cv2.VideoWriter(
@@ -42,6 +41,8 @@ def show_tracking(videopath, mot_path, savepath='', show=False):
             (int(videocapture.get(cv2.CAP_PROP_FRAME_WIDTH)), int( videocapture.get(cv2.CAP_PROP_FRAME_HEIGHT)))
 
         )
+    if show:
+        cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
 
     ret, frame = videocapture.read()
     current_frame = 0
@@ -52,7 +53,7 @@ def show_tracking(videopath, mot_path, savepath='', show=False):
             if videowriter is not None:
                 videowriter.write(frame)
             if show:
-                cv2.imshow("Image", frame)
+                cv2.imshow(window_name, frame)
                 cv2.waitKey(20)
 
 
@@ -65,12 +66,15 @@ def show_tracking(videopath, mot_path, savepath='', show=False):
         width = int(float(line[4]))
         height = int(float(line[5]))
 
-        cv2.rectangle(frame, (x,y), (x + 30, y - 20), color, thickness=-1)
-        cv2.putText(frame, line[1], (x , y), cv2.FONT_HERSHEY_PLAIN, 1.5, (0,0,0))
+        cv2.rectangle(frame, (x,y), (x + 40, y - 20), color, thickness=-1)
+        cv2.putText(frame, line[1], (x, y), cv2.FONT_HERSHEY_PLAIN, 1.5, (0, 0, 0))
         cv2.putText(frame, "Frame: " + str(current_frame), (5, 40), cv2.FONT_HERSHEY_PLAIN, 4, (0, 0, 255))
 
         cv2.rectangle(frame, (x, y), (x + width, y + height), color)
 
 
 show_tracking("/home/flo/Videos/TS_10_5.mp4",
-              "/home/flo/CLionProjects/CVATXmlParser/Tracker/groundtruth/BA-001/gt/gt.txt", show=True)
+              "../data/mot_fmt_results/smot_TS_10_5.txt", show=False, delimiter=',',
+              savepath="../data/evaluation_video/smot_TS_10_5_tr.mp4")
+
+

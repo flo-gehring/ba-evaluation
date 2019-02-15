@@ -26,6 +26,11 @@ class Box:
             else:
                 self.attributes = dict()
 
+        def point_in_box(self, x, y):
+            horizontally_inside = float(self.attributes['xtl']) < x < float(self.attributes['xbr'])
+            vertically_inside = float(self.attributes['ytl']) < y < float(self.attributes['ybr'])
+            return  horizontally_inside and vertically_inside
+
 
 class Polygon:
         def __init__(self, xml_node):
@@ -72,7 +77,7 @@ class CVATDocument:
         1, 8, 875.49, 399.98, 95.303, 233.93, -1, -1, -1, -1
         """
 
-        def to_format(self, format_id, filepath='',  dets_only = False, include_occluded = True):
+        def to_format(self, format_id, filepath='',  dets_only=False, include_occluded=True):
             output_file = None
             if not filepath == '':
                 output_file = open(filepath, "w")
@@ -180,7 +185,7 @@ class CVATDocument:
             else:
                 print(json_string)
 
-        def MOT_to_CVAT_parsetree(self, docpath):
+        def MOT_to_CVAT_parsetree(self, docpath, delimiter=','):
             num_ids = 0
             map_id_trackindex = dict()
 
@@ -190,7 +195,7 @@ class CVATDocument:
             input_file = open(docpath, 'r')
 
             with open(docpath, 'r') as csvfile:
-                reader = csv.reader(csvfile, delimiter=',')
+                reader = csv.reader(csvfile, delimiter=delimiter)
                 for row in reader:
                     (frame, id, bb_left, bb_top, bb_width, bb_height, conf) = row[0:7]
 
@@ -252,21 +257,38 @@ class CVATDocument:
 
                 meta_list = [x_values, y_values, width_values, height_values, omega_values]
 
-                for frame in track.tracked_elements:
-                    frame_info = track.tracked_elements[frame].attributes
+                xtl = 0
+                ytl = 0
+                xbr = 0
+                ybr = 0
 
-                    decimal_limiter = "{0:.2f} "
+                for frame in range(from_frame, to_frame + 1):
+                    # Update the values if there is data for the object in this frame, else just use the old values
+                    # and mark the object as invisible
+                    if frame in track.tracked_elements:
 
-                    xtl = float(frame_info['xtl'])
-                    ytl = float(frame_info['ytl'])
-                    xbr = float(frame_info['xbr'])
-                    ybr = float(frame_info['ybr'])
+                        frame_info = track.tracked_elements[frame].attributes
+
+                        decimal_limiter = "{0:.2f} "
+
+                        xtl = float(frame_info['xtl'])
+                        ytl = float(frame_info['ytl'])
+                        xbr = float(frame_info['xbr'])
+                        ybr = float(frame_info['ybr'])
+
+                        if 'occluded' not in frame_info:
+                            omega_values.append("1 ")
+                        else:
+                            omega_values.append(str(int(frame_info['occluded'] != "1")) + " ")
+
+
+                    else:
+                        omega_values.append("0 ")
 
                     x_values.append(decimal_limiter.format(xtl))
                     y_values.append(decimal_limiter.format(ytl))
                     width_values.append(decimal_limiter.format(xbr - xtl))
                     height_values.append(decimal_limiter.format(ybr - ytl))
-                    omega_values.append(str(int(frame_info['occluded'] == "1")) + " ")
 
                 for l in meta_list:
                     doc.writelines(l)
@@ -278,8 +300,6 @@ def parse_node(node):
                 return Box(node)
         if node.tag == 'polygon':
                 return Polygon(node)
-
-
 
 
 def my_json_to_mot_16_dets(json_filepath, outpath):
@@ -361,7 +381,7 @@ def convert_for_mm(filepath):
     writelines = list()
     for line in csvfile:
 
-        outstring = "\t".join((line[0:6]).append([ 1, 1, line[6], 0]))
+        outstring = "\t".join((line[0:6]).append([1, 1, line[6], 0]))
 
 
 
