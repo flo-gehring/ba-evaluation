@@ -65,7 +65,44 @@ class CVATDocument:
                                 new_track.tracked_elements[frame] = parse_node(node)
                         self.tracks.append(new_track)
 
-        def to_format(self, format_id, filepath='',  dets_only=False, include_occluded=True):
+
+        def __iterate_frame_wise(self, line_formatter, output_path=''):
+            """
+            Iterate for framewise over the tracked object and print the strings produced by line_formatter.
+            If an output path is given it will be printed to the file, else to the console.
+            :param line_formatter:
+            :param output_path:
+            :return:
+            """
+            output_file = None
+            if not output_path == '':
+                output_file = open(output_path, "w")
+
+            for frame in range(0, (self.max_frame + 1)):
+                for track in self.tracks:
+                    if frame in track.tracked_elements:
+                        frame_info = track.tracked_elements[frame].attributes
+
+                        bb_left = float(frame_info['xtl'])
+                        bb_top = float(frame_info['ytl'])
+                        bb_width = float(frame_info['xbr']) - bb_left
+                        bb_height = float(frame_info['ybr']) - bb_top
+                        bb_occluded = frame_info['occluded'] == "1"
+
+                        formatted_line = line_formatter(
+                                frame,
+                                self.tracks.index(track),
+                                bb_left, bb_top, bb_width,
+                                bb_height, bb_occluded)
+
+                        if output_file is not None:
+                                output_file.write(formatted_line)
+                        else:
+                                print(formatted_line)
+
+
+
+        def to_format(self, format_id, filepath='',  dets_only=False, include_occluded=True, delimiter=', '):
             """
             MOT Format is used for the Multiple Object Tracking Benchmark.
             Documented on their [Website](https://motchallenge.net/instructions/) under the section Format.
@@ -80,7 +117,11 @@ class CVATDocument:
             output_file = None
             if not filepath == '':
                 output_file = open(filepath, "w")
-            
+
+            line_format = "{0}" + delimiter + "{1}" + \
+                          delimiter + "{2}" + delimiter + "{3}" + delimiter + "{4}" + delimiter + \
+                          "{5}" + delimiter + "{6}" + delimiter + \
+                          "{7}" + delimiter + "{7}" + delimiter + "{7} \n"
             uniqueId = 0
             if format_id in ["2D MOT 2015", "MOT16", "PETS2017", "MOT17"]:
                         for frame in range(0, (self.max_frame + 1)):
@@ -96,8 +137,7 @@ class CVATDocument:
                                                     bb_height = float(frame_info['ybr']) - bb_top
                                                     bb_occluded = frame_info['occluded'] == "1"
 
-                                                    formatted_line = "{0}, {1}, {2}, {3}, {4}, " \
-                                                                     "{5}, {6}, {7}, {7}, {7} \n".format(
+                                                    formatted_line = line_format.format(
                                                                             frame,
                                                                             -1 if dets_only else self.tracks.index(track),
                                                                             bb_left, bb_top, bb_width,
@@ -138,6 +178,14 @@ class CVATDocument:
                             output_file.write(formatted_line)
                         else:
                             print(formatted_line)
+
+
+        def to_mot_metrics_fmt(self, doc_path):
+            formatter = lambda frame, index, bb_left, bb_top, bb_width, bb_height, bb_occluded: '\t'.join(
+                [str(x) for x in [frame, index, bb_left, bb_top, bb_width, bb_height, 1, 1, 0 if bb_occluded else 1, 0]]
+            ) + linesep
+            self.__iterate_frame_wise(formatter, doc_path)
+
 
         def to_sloth_format(self, groundtruth = False, output_path=''):
             sloth_representation = [ {'frames':[]}]
@@ -190,6 +238,8 @@ class CVATDocument:
             else:
                 print(json_string)
 
+
+
         def MOT_to_CVAT_parsetree(self, docpath, delimiter=','):
             num_ids = 0
             map_id_trackindex = dict()
@@ -221,7 +271,8 @@ class CVATDocument:
                     new_box.attributes['ytl'] = float(bb_top)
                     new_box.attributes['xtl'] = float(bb_left)
                     new_box.attributes['xbr'] = str(float(bb_left) + float(bb_width))
-                    new_box.attributes['ybr'] = str(float(bb_height)+ float(bb_top))
+                    new_box.attributes['ybr'] = str(float(bb_height) + float(bb_top))
+                    new_box.attributes['occluded'] = "0"
 
             self.max_frame = int(frame)
 
@@ -377,16 +428,14 @@ if __name__ == "__main__":
             doc.to_sloth_format(groundtruth=args.gt, output_path=args.outfile)
 
 
-from os import linesep
 def convert_for_mm(filepath):
-
     f = open(filepath, "r")
     output = open(filepath + ".csv", "w")
     csvfile = csv.reader(f, delimiter=',')
     writelines = list()
     for line in csvfile:
-
         outstring = "\t".join((line[0:6]).append([1, 1, line[6], 0]))
+
 
 
 

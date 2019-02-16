@@ -134,21 +134,21 @@ def create_evaluation_test_directory(eval_root, path_to_mot_fmt_result, path_to_
         os.chdir(eval_root)
 
     get_into_dir(tracker_name)
-    result_doc = CVATDocument(abs_result_path)
-    result_doc.parse()
-    result_doc.to_mot16_gt(sequence_name + '.txt', tab_delimiter=True)
+    result_doc = CVATDocument()
+    result_doc.MOT_to_CVAT_parsetree(abs_result_path)
+    result_doc.to_mot_metrics_fmt(sequence_name + '.txt')
 
 
 
-"""
+
 cvat_doc = CVATDocument("/home/flo/CLionProjects/Panorama2Cubemap/data/Annotations/2_TS_10_05.xml")
 cvat_doc.parse()
 output_doc = get_smot_tracker_data('/home/flo/Workspace/OtherTrackers/smot/smot_data/TS_10_5/ihtls/TS_10_5_ihtls_fn.mat'
                                    , cvat_doc)
-output_doc.to_format("MOT16", 'smot_TS_10_5.txt')
-"""
+output_doc.to_format("MOT16", 'data/mot_fmt_results/smot_TS_10_5.txt')
 
-data_directory = "/home/flo/PycharmProjects/be-evaluation/data/"
+if __name__ == "__main__":
+    data_directory = "/home/flo/PycharmProjects/ba-evaluation/data/"
 
-create_evaluation_test_directory(data_directory + "/eval_root/", data_directory + "mot_fmt_result/smot_TS_10_5.txt",
-                                 data_directory + "cvatgt/TS_10_5.xml", "TS_10_5")
+    create_evaluation_test_directory(data_directory + "eval_root/", data_directory + "mot_fmt_results/smot_TS_10_5.txt",
+                                 data_directory + "cvatgt/TS_10_5.xml", "SMOT", "TS_10_5")
