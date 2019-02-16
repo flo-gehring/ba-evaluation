@@ -2,7 +2,6 @@ import cv2
 import csv
 import random
 
-
 ID_COLOR_MAP = dict()
 
 

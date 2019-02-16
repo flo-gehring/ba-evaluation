@@ -1,8 +1,11 @@
-import numpy as np
 from scipy.io import loadmat
 from trackformatconverter import Track, CVATDocument, Box
-import json
+from os.path import splitext, split
+from setup_tracker_directories import get_into_dir
+import os
 
+def get_file_name(path):
+    return splitext(split(path)[1])[0]
 
 def track_from_itlf_entry(itlf_entry):
     track_obj = Track()
@@ -20,7 +23,7 @@ def track_from_itlf_entry(itlf_entry):
     return frame_coords
 
 
-def get_smot_tracker_data(path_to_mat, outfilepath, cvat_object):
+def get_smot_tracker_data(path_to_mat, cvat_object):
     """
     Loads a Mat file as produced by the smot tracker and returns a CVAT Document.
     :param path_to_mat:
@@ -93,8 +96,59 @@ def get_smot_tracker_data(path_to_mat, outfilepath, cvat_object):
     return cvat_output
 
 
+def create_evaluation_test_directory(eval_root, path_to_mot_fmt_result, path_to_gt, tracker_name, sequence_name):
+    """
+    Sets up a directory structure like:
 
+    ---------
+    Layout for ground truth data
+    "eval_root"/groundtruths/"sequence_name"/gt/gt.txt
+    ...
+    Layout for test data
+    "eval_root"/"tracker_name"/"sequence_name".txt
+    <TEST_ROOT>/<SEQUENCE_2>.txt
+    :param eval_root: Directory where all the evaluation data is stored
+    :param path_to_mot_fmt_result:  Result of the tracker, stored in MOT16 Format
+    :param path_to_gt: Path to the GT, stored in the xml format OpenCVAT produces.
+    :param tracker_name: Name of the Tracker.
+    :param sequence_name: Name of the video
+    :return None: Side Effects: Creations of several Directories.
+    """
+    abs_result_path = os.path.abspath(path_to_mot_fmt_result)
+    abs_gt_path = os.path.abspath(path_to_gt)
+
+    os.chdir(eval_root)
+
+    get_into_dir('groundtruths')
+    if os.path.exists(sequence_name):
+        print("Ground truth Directory with given Sequence Name found, Ground truth setup skipped.")
+        os.chdir(os.pardir)
+    else:
+        print("Creating GT.. ")
+        get_into_dir(sequence_name)
+        get_into_dir('gt')
+        gt_doc = CVATDocument(abs_gt_path)
+        gt_doc.parse()
+        gt_doc.to_mot16_gt('gt.txt', tab_delimiter=True)
+        print("Groundtruth created..")
+        os.chdir(eval_root)
+
+    get_into_dir(tracker_name)
+    result_doc = CVATDocument(abs_result_path)
+    result_doc.parse()
+    result_doc.to_mot16_gt(sequence_name + '.txt', tab_delimiter=True)
+
+
+
+"""
 cvat_doc = CVATDocument("/home/flo/CLionProjects/Panorama2Cubemap/data/Annotations/2_TS_10_05.xml")
 cvat_doc.parse()
-output_doc = get_smot_tracker_data('/home/flo/Workspace/OtherTrackers/smot/smot_data/TS_10_5/ihtls/TS_10_5_ihtls_fn.mat', "", cvat_doc)
+output_doc = get_smot_tracker_data('/home/flo/Workspace/OtherTrackers/smot/smot_data/TS_10_5/ihtls/TS_10_5_ihtls_fn.mat'
+                                   , cvat_doc)
 output_doc.to_format("MOT16", 'smot_TS_10_5.txt')
+"""
+
+data_directory = "/home/flo/PycharmProjects/be-evaluation/data/"
+
+create_evaluation_test_directory(data_directory + "/eval_root/", data_directory + "mot_fmt_result/smot_TS_10_5.txt",
+                                 data_directory + "cvatgt/TS_10_5.xml", "TS_10_5")

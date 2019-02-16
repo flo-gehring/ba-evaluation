@@ -65,19 +65,18 @@ class CVATDocument:
                                 new_track.tracked_elements[frame] = parse_node(node)
                         self.tracks.append(new_track)
 
-        """
-        MOT Format is used for the Multiple Object Tracking Benchmark.
-        Documented on their [Website](https://motchallenge.net/instructions/) under the section Format. 
-        conf will be 0, x,y and z will always be -1.
-        <id> will simply the position of the track in the list.
-        
-        <frame>, <id>, <bb_left>, <bb_top>, <bb_width>, <bb_height>, <conf>, <x>, <y>, <z>
-        1, 3, 794.27, 247.59, 71.245, 174.88, -1, -1, -1, -1
-        1, 6, 1648.1, 119.61, 66.504, 163.24, -1, -1, -1, -1
-        1, 8, 875.49, 399.98, 95.303, 233.93, -1, -1, -1, -1
-        """
-
         def to_format(self, format_id, filepath='',  dets_only=False, include_occluded=True):
+            """
+            MOT Format is used for the Multiple Object Tracking Benchmark.
+            Documented on their [Website](https://motchallenge.net/instructions/) under the section Format.
+            conf will be 0, x,y and z will always be -1.
+            <id> will simply the position of the track in the list.
+
+            <frame>, <id>, <bb_left>, <bb_top>, <bb_width>, <bb_height>, <conf>, <x>, <y>, <z>
+            1, 3, 794.27, 247.59, 71.245, 174.88, -1, -1, -1, -1
+            1, 6, 1648.1, 119.61, 66.504, 163.24, -1, -1, -1, -1
+            1, 8, 875.49, 399.98, 95.303, 233.93, -1, -1, -1, -1
+            """
             output_file = None
             if not filepath == '':
                 output_file = open(filepath, "w")
@@ -102,14 +101,14 @@ class CVATDocument:
                                                                             frame,
                                                                             -1 if dets_only else self.tracks.index(track),
                                                                             bb_left, bb_top, bb_width,
-                                                                            bb_height, int( not bb_occluded), -1)
+                                                                            bb_height, int(not bb_occluded), -1)
 
                                                     if output_file is not None:
                                                             output_file.write(formatted_line)
                                                     else:
                                                         print(formatted_line)
 
-        def to_mot16_gt(self, filepath=''):
+        def to_mot16_gt(self, filepath='', tab_delimiter=False):
             output_file = None
             if not filepath == '':
                 output_file = open(filepath, "w")
@@ -126,7 +125,13 @@ class CVATDocument:
 
                         bb_occluded = frame_info['occluded'] == "1"
 
-                        formatted_line = "{0}, {1}, {2}, {3}, {4}, " \
+                        if tab_delimiter:
+                            formatted_line = "{0}\t{1}\t{2}\t{3}\t{4}\t" \
+                                             "{5}\t{6}\t{7}\t{7}\t{7} \n".format(frame, track_id, bb_left, bb_top,
+                                                                                 bb_width,
+                                                                                 bb_height, 0 if bb_occluded else 1, 1)
+                        else:
+                            formatted_line = "{0}, {1}, {2}, {3}, {4}, " \
                                          "{5}, {6}, {7}, {7}, {7} \n".format(frame, track_id, bb_left, bb_top, bb_width,
                                                                              bb_height, 0 if bb_occluded else 1, 1)
                         if output_file is not None:

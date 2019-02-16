@@ -47,6 +47,7 @@ string.""", formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument('--solver', type=str, help='LAP solver to use')
     return parser.parse_args()
 
+
 def compare_dataframes(gts, ts):
     accs = []
     names = []
@@ -59,6 +60,7 @@ def compare_dataframes(gts, ts):
             logging.warning('No ground truth for {}, skipping.'.format(k))
 
     return accs, names
+
 
 if __name__ == '__main__':
 
