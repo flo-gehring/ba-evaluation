@@ -98,7 +98,7 @@ if __name__ == "__main__":
 
     print(args.stoplist)
 
-    while ret :
+    while ret:
 
         error_descriptions = list()
 

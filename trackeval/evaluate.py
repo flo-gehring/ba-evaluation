@@ -93,3 +93,20 @@ if __name__ == '__main__':
     summary = mh.compute_many(accs, names=names, metrics=mm.metrics.motchallenge_metrics, generate_overall=True)
     print(mm.io.render_summary(summary, formatters=mh.formatters, namemap=mm.io.motchallenge_metric_names))
 logging.info('Completed')
+
+"""
+flo@flo-desktop:~/PycharmProjects/ba-evaluation/trackeval$ python3 evaluate.py ../data/eval_root/groundtruths/ ../data/eval_root/SMOT/
+05:34:16 INFO - Found 1 groundtruths and 1 test files.
+05:34:16 INFO - Available LAP solvers ['scipy']
+05:34:16 INFO - Default LAP solver 'scipy'
+05:34:16 INFO - Loading files.
+05:34:17 INFO - Comparing TS_10_5...
+05:34:19 INFO - Running metrics
+/home/flo/.local/lib/python3.6/site-packages/motmetrics/mot.py:243: FutureWarning: the 'labels' keyword is deprecated, use 'codes' instead
+  idx = pd.MultiIndex(levels=[[],[]], labels=[[],[]], names=['FrameId','Event'])
+         IDF1   IDP   IDR  Rcll  Prcn GT MT PT ML FP   FN IDs  FM  MOTA  MOTP
+TS_10_5 57.7% 68.0% 50.1% 72.9% 98.9% 17  8  6  3 43 1491  27  32 71.6% 0.001
+OVERALL 57.7% 68.0% 50.1% 72.9% 98.9% 17  8  6  3 43 1491  27  32 71.6% 0.001
+05:34:20 INFO - Completed
+
+"""

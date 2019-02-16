@@ -23,13 +23,37 @@ class Box:
         def __init__(self, xml_node=None):
             if xml_node is not None:
                 self.attributes = deepcopy(xml_node.attrib)
+                self.xtl = float(self.attributes['xtl'])
+                self.ytl = float(self.attributes['ytl'])
+                self.ybr = float(self.attributes['ybr'])
+                self.xbr = float(self.attributes['xbr'])
+
             else:
                 self.attributes = dict()
 
         def point_in_box(self, x, y):
             horizontally_inside = float(self.attributes['xtl']) < x < float(self.attributes['xbr'])
             vertically_inside = float(self.attributes['ytl']) < y < float(self.attributes['ybr'])
-            return  horizontally_inside and vertically_inside
+            return horizontally_inside and vertically_inside
+
+        def corner_points(self):
+            return (self.attributes['xtl'], self.attributes['ytl']), (self.attributes['xbr'], self.attributes['ybr'])
+
+        def top_right_width_height(self):
+            xtl = float(self.attributes['xtl'])
+            ytl = float(self.attributes['ytl'])
+            width = float(self.attributes['xbr']) - xtl
+            height = float(self.attributes['ybr']) - ytl
+            return (xtl, ytl), (width, height)
+
+        def in_area(self, a_xtl, a_ytl, a_width, a_height):
+
+            return a_xtl <= self.xtl \
+                   and a_ytl <= self.ytl \
+                   and a_xtl + a_width >= self.xbr \
+                   and a_ytl + a_height >= self.ybr
+
+
 
 
 class Polygon:
@@ -99,8 +123,6 @@ class CVATDocument:
                                 output_file.write(formatted_line)
                         else:
                                 print(formatted_line)
-
-
 
         def to_format(self, format_id, filepath='',  dets_only=False, include_occluded=True, delimiter=', '):
             """
@@ -179,16 +201,14 @@ class CVATDocument:
                         else:
                             print(formatted_line)
 
-
         def to_mot_metrics_fmt(self, doc_path):
             formatter = lambda frame, index, bb_left, bb_top, bb_width, bb_height, bb_occluded: '\t'.join(
                 [str(x) for x in [frame, index, bb_left, bb_top, bb_width, bb_height, 1, 1, 0 if bb_occluded else 1, 0]]
             ) + linesep
             self.__iterate_frame_wise(formatter, doc_path)
 
-
-        def to_sloth_format(self, groundtruth = False, output_path=''):
-            sloth_representation = [ {'frames':[]}]
+        def to_sloth_format(self, groundtruth=False, output_path=''):
+            sloth_representation = [{'frames': []}]
 
             sloth_representation[0]['class'] = 'video'
             sloth_representation[0]['filename'] = 'dontcare.mp4'
@@ -238,7 +258,26 @@ class CVATDocument:
             else:
                 print(json_string)
 
+        def delete_bystanders(self, bystander_document):
+            """
+            Remove bystanders from the data, so it does not screw up the results.
+            :param bystander_document:CVATDocument  with tracks covering the area of the bystanders
+            :return: None
+            """
+            bystander_tracks = bystander_document.tracks
+            for bystander_track in bystander_tracks:
+                from_frame, to_frame = bystander_track.from_to_frame()
 
+                for track in self.tracks:
+                    for cur_frame in range(from_frame, to_frame + 1):
+                        bystander_box = bystander_track.tracked_elements[cur_frame]
+                        xtl , width_height = bystander_box.top_right_width_height()
+                        bystander_x, bystander_y = xtl
+                        bystander_width, bystander_height = width_height
+                        if cur_frame in track.tracked_elements:
+                            box = track.tracked_elements[cur_frame]
+                            if box.in_area(bystander_x, bystander_y, bystander_width, bystander_height):
+                                del track.tracked_elements[cur_frame]
 
         def MOT_to_CVAT_parsetree(self, docpath, delimiter=','):
             num_ids = 0
@@ -268,6 +307,11 @@ class CVATDocument:
 
                     new_box = Box()
                     current_track.tracked_elements[frame] = new_box
+                    new_box.xtl = bb_top
+                    new_box.ybr = (float(bb_height) + float(bb_top))
+                    new_box.xbr = (float(bb_left) + float(bb_width))
+                    new_box.ytl = float(bb_top)
+
                     new_box.attributes['ytl'] = float(bb_top)
                     new_box.attributes['xtl'] = float(bb_left)
                     new_box.attributes['xbr'] = str(float(bb_left) + float(bb_width))
@@ -421,7 +465,7 @@ if __name__ == "__main__":
             doc = CVATDocument()
             doc.MOT_to_CVAT_parsetree(args.infile)
 
-        if args.outformat  in ["2D MOT 2015", "MOT16", "PETS2017", "MOT17"]:
+        if args.outformat in ["2D MOT 2015", "MOT16", "PETS2017", "MOT17"]:
             doc.to_format(args.outformat, args.outfile, dets_only=args.mgt)
 
         elif args.outformat == "SLOTH":
