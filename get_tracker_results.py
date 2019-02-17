@@ -4,6 +4,7 @@ from os.path import splitext, split
 from setup_tracker_directories import get_into_dir
 import os
 
+
 def get_file_name(path):
     return splitext(split(path)[1])[0]
 

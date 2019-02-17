@@ -207,16 +207,18 @@ class CVATDocument:
             ) + linesep
             self.__iterate_frame_wise(formatter, doc_path)
 
-        def to_sloth_format(self, groundtruth=False, output_path=''):
+        def sloth_format_json_factory(self, groundtruth=False):
+            """
+            Produces a JSON Compatible String representing the Groundtruth or Tracking Results.
+            :param groundtruth:
+            :return:
+            """
             sloth_representation = [{'frames': []}]
 
             sloth_representation[0]['class'] = 'video'
             sloth_representation[0]['filename'] = 'dontcare.mp4'
 
             frames_list = sloth_representation[0]['frames']
-
-            if not output_path == '':
-                output_file = open(output_path, "w")
 
             for frame in range(0, self.max_frame + 1):
                 frames_list.append({
@@ -252,7 +254,21 @@ class CVATDocument:
                             current_annotation['dco'] = bool(float(frame_info['outside'])) or\
                                                         bool(float(frame_info['occluded']))
 
+            return sloth_representation
+
+        def to_sloth_format(self, groundtruth=False, output_path=''):
+            """
+            Convenience Function which prints the result of sloth_format_string_factory or saves it to a file
+            :param groundtruth:
+            :param output_path:
+            :return:
+            """
+            if not output_path == '':
+                output_file = open(output_path, "w")
+
+            sloth_representation = self.sloth_format_json_factory(groundtruth=groundtruth)
             json_string = json.dumps(sloth_representation, sort_keys=True, indent=4)
+
             if not output_path == '':
                 output_file.write(json_string)
             else:
@@ -278,6 +294,9 @@ class CVATDocument:
                             box = track.tracked_elements[cur_frame]
                             if box.in_area(bystander_x, bystander_y, bystander_width, bystander_height):
                                 del track.tracked_elements[cur_frame]
+
+            self.tracks = [x for x in self.tracks if len(x.tracked_elements) != 0]
+
 
         def MOT_to_CVAT_parsetree(self, docpath, delimiter=','):
             num_ids = 0
