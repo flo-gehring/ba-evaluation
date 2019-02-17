@@ -46,6 +46,9 @@ def show_tracking(videopath, mot_path, savepath='', show=False, delimiter='\t'):
     ret, frame = videocapture.read()
     current_frame = 0
     for line in mot_reader:
+        if len(line) < 6:
+            break
+
         read_frame = int(line[0])
         if read_frame != current_frame: # Update Frame and Display
 
@@ -70,9 +73,3 @@ def show_tracking(videopath, mot_path, savepath='', show=False, delimiter='\t'):
         cv2.putText(frame, "Frame: " + str(current_frame), (5, 40), cv2.FONT_HERSHEY_PLAIN, 4, (0, 0, 255))
 
         cv2.rectangle(frame, (x, y), (x + width, y + height), color)
-
-
-show_tracking("/home/flo/Videos/TS_10_5.mp4",
-              "../data/eval_root/SMOT/TS_10_5.txt", show=True)
-
-

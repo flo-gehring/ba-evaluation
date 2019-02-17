@@ -1,10 +1,12 @@
-from pymot import MOTEvaluation
+from pymot import MOTEvaluation, LOG
 from trackformatconverter import CVATDocument
-from setup_tracker_directories import get_into_dir
+from setup_tracker_directories import get_into_dir, get_filename
 import os.path
 from eval_utilities.visualize_evalution import create_video
 from formatchecker import *
 import json
+import logging
+from eval_utilities.show_tracking import show_tracking
 
 def get_evaluator(path_to_mot_gt, path_to_mot_tracking_result, path_to_bystanders=None):
     """
@@ -60,16 +62,18 @@ def create_pymot_eval_directory(path_to_gt, path_to_result, path_to_target_direc
     :param path_to_bystanders:
     :return:
     """
-    evaluator = get_evaluator(path_to_gt, path_to_result, path_to_bystanders)
-    evaluator.evaluate()
+    abs_path_to_result = os.path.abspath(path_to_result)
+    if path_to_source_vid is not None:
+        abs_path_to_source_vid = os.path.abspath(path_to_source_vid)
 
-    starting_dir = os.curdir
     abs_path_to_td = os.path.abspath(path_to_target_directory)
-
     os.chdir(abs_path_to_td)
     get_into_dir(tracker_name)
     get_into_dir(video_name)
 
+    logging.basicConfig(filename=video_name + ".LOG", level=logging.INFO)
+    evaluator = get_evaluator(path_to_gt, path_to_result, path_to_bystanders)
+    evaluator.evaluate()
     evaluator.getRelativeStatistics()
 
     abs_stat_file = open("absolute_stats.json", 'w')
@@ -91,6 +95,11 @@ def create_pymot_eval_directory(path_to_gt, path_to_result, path_to_target_direc
     if path_to_source_vid is not None:
         filename_debug_vid = "debug_" + video_name + ".mp4"
         create_video("visual_debug.json", path_to_source_vid, path_to_output=filename_debug_vid)
+        show_tracking(abs_path_to_source_vid, abs_path_to_result,
+                      savepath='tracking_' + video_name + '.mp4',delimiter=',')
+
+
+    logging.basicConfig()
 
 
 def setup_mot_doc(filepath, bystander_doc=None):
@@ -115,7 +124,7 @@ def setup_mot_doc(filepath, bystander_doc=None):
     return cvat_doc
 
 
-tracker_names = ['DEEPSORT', 'PANORAMA_TRACKER']
+tracker_names = ['PANORAMA_TRACKER']
 
 for name in tracker_names:
 
