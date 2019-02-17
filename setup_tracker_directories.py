@@ -113,6 +113,6 @@ def setup_smot_tracker(cvatdoc, path_to_video, path_to_smot_data, skip_img_dir_i
 
 if __name__ == "__main__":
     cvatdoc = CVATDocument()
-    cvatdoc.MOT_to_CVAT_parsetree("./data/mot_fmt_results/panorama_tracker_TS_10_5.txt", delimiter='\t')
+    cvatdoc.MOT_to_CVAT_parsetree("./data/mot_fmt_results/panorama_tracker_TS_10_5.txt")
     setup_smot_tracker(cvatdoc, '/home/flo/Videos/TS_10_5.mp4', '/home/flo/Workspace/OtherTrackers/smot/smot_data/',
                    skip_img_dir_if_exists=True)

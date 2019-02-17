@@ -115,11 +115,15 @@ def setup_mot_doc(filepath, bystander_doc=None):
     return cvat_doc
 
 
-create_pymot_eval_directory(
-    '/home/flo/PycharmProjects/ba-evaluation/data/cvatgt/TS_10_5.xml',
-    '/home/flo/PycharmProjects/ba-evaluation/data/mot_fmt_results/smot_TS_10_5.txt',
-    '/home/flo/PycharmProjects/ba-evaluation/data/pymot_eval',
-    'SMOT',
-    'TS_10_5',
-    path_to_bystanders='/home/flo/PycharmProjects/ba-evaluation/data/bystanders/TS_10_05 Bystanders.xml',
-    path_to_source_vid='/home/flo/PycharmProjects/ba-evaluation/data/videos/TS_10_5.mp4')
+tracker_names = ['DEEPSORT', 'PANORAMA_TRACKER']
+
+for name in tracker_names:
+
+    create_pymot_eval_directory(
+        '/home/flo/PycharmProjects/ba-evaluation/data/cvatgt/TS_10_5.xml',
+        '/home/flo/PycharmProjects/ba-evaluation/data/mot_fmt_results/' + name.lower() + '_TS_10_5.txt',
+        '/home/flo/PycharmProjects/ba-evaluation/data/pymot_eval',
+        name,
+        'TS_10_5',
+        path_to_bystanders='/home/flo/PycharmProjects/ba-evaluation/data/bystanders/TS_10_05 Bystanders.xml',
+        path_to_source_vid='/home/flo/PycharmProjects/ba-evaluation/data/videos/TS_10_5.mp4')

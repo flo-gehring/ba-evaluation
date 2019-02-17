@@ -310,7 +310,11 @@ class CVATDocument:
             with open(docpath, 'r') as csvfile:
                 reader = csv.reader(csvfile, delimiter=delimiter)
                 for row in reader:
-                    (frame, id, bb_left, bb_top, bb_width, bb_height, conf) = row[0:7]
+                    if len(row) <= 8:
+
+                        break
+                    else:
+                        (frame, id, bb_left, bb_top, bb_width, bb_height, conf) = row[0:7]
 
                     frame = int(frame)
 
