@@ -96,6 +96,20 @@ def get_smot_tracker_data(path_to_mat, cvat_object):
     return cvat_output
 
 
+def create_smot_mot_fmt_dir(
+        gt_data_path="/home/flo/CLionProjects/Panorama2Cubemap/data/Annotations/2_TS_10_05.xml",
+        matlab_result='/home/flo/Workspace/OtherTrackers/smot/smot_data/TS_10_5/ihtls/TS_10_5_ihtls_fn.mat',
+        mot_fmt_path='/home/flo/PycharmProjects/ba-evaluation/data/mot_fmt_results/smot_TS_10_5.txt'):
+    # "/home/flo/CLionProjects/Panorama2Cubemap/data/Annotations/2_TS_10_05.xml"
+    cvat_doc = CVATDocument(gt_data_path)
+    cvat_doc.parse()
+    # '/home/flo/Workspace/OtherTrackers/smot/smot_data/TS_10_5/ihtls/TS_10_5_ihtls_fn.mat'
+    output_doc = \
+        get_smot_tracker_data(matlab_result, cvat_doc)
+
+    output_doc.to_format("MOT16", mot_fmt_path)
+
+
 def create_evaluation_test_directory(eval_root, path_to_mot_fmt_result, path_to_gt, tracker_name, sequence_name):
     """
     Sets up a directory structure like:
@@ -141,11 +155,6 @@ def create_evaluation_test_directory(eval_root, path_to_mot_fmt_result, path_to_
 
 
 
-cvat_doc = CVATDocument("/home/flo/CLionProjects/Panorama2Cubemap/data/Annotations/2_TS_10_05.xml")
-cvat_doc.parse()
-output_doc = get_smot_tracker_data('/home/flo/Workspace/OtherTrackers/smot/smot_data/TS_10_5/ihtls/TS_10_5_ihtls_fn.mat'
-                                   , cvat_doc)
-output_doc.to_format("MOT16", 'data/mot_fmt_results/smot_TS_10_5.txt')
 
 if __name__ == "__main__":
     data_directory = "/home/flo/PycharmProjects/ba-evaluation/data/"
