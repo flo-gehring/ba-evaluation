@@ -73,7 +73,6 @@ def show_tracking(videopath, mot_path, savepath='', show=False, delimiter='\t'):
 
 
 show_tracking("/home/flo/Videos/TS_10_5.mp4",
-              "../data/mot_fmt_results/smot_TS_10_5.txt", show=False, delimiter=',',
-              savepath="../data/evaluation_video/smot_TS_10_5_tr.mp4")
+              "../data/eval_root/SMOT/TS_10_5.txt", show=True)
 
 

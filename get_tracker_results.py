@@ -110,7 +110,9 @@ def create_smot_mot_fmt_dir(
     output_doc.to_format("MOT16", mot_fmt_path)
 
 
-def create_evaluation_test_directory(eval_root, path_to_mot_fmt_result, path_to_gt, tracker_name, sequence_name):
+
+def create_evaluation_test_directory(eval_root, path_to_mot_fmt_result, path_to_gt,
+                                     tracker_name, sequence_name, bystander_path=None):
     """
     Sets up a directory structure like:
 
@@ -128,6 +130,12 @@ def create_evaluation_test_directory(eval_root, path_to_mot_fmt_result, path_to_
     :param sequence_name: Name of the video
     :return None: Side Effects: Creations of several Directories.
     """
+    bystander_doc = None
+    if bystander_path is not None:
+        bystander_doc = CVATDocument(bystander_path)
+        bystander_doc.parse()
+
+
     abs_result_path = os.path.abspath(path_to_mot_fmt_result)
     abs_gt_path = os.path.abspath(path_to_gt)
 
@@ -143,6 +151,8 @@ def create_evaluation_test_directory(eval_root, path_to_mot_fmt_result, path_to_
         get_into_dir('gt')
         gt_doc = CVATDocument(abs_gt_path)
         gt_doc.parse()
+        if bystander_doc is not None:
+            gt_doc.delete_bystanders(bystander_doc)
         gt_doc.to_mot16_gt('gt.txt', tab_delimiter=True)
         print("Groundtruth created..")
         os.chdir(eval_root)
@@ -150,14 +160,19 @@ def create_evaluation_test_directory(eval_root, path_to_mot_fmt_result, path_to_
     get_into_dir(tracker_name)
     result_doc = CVATDocument()
     result_doc.MOT_to_CVAT_parsetree(abs_result_path)
+    if bystander_doc is not None:
+        result_doc.delete_bystanders(bystander_doc)
     result_doc.to_mot_metrics_fmt(sequence_name + '.txt')
 
-
-
-
-
 if __name__ == "__main__":
+    cvat_doc = CVATDocument("/home/flo/CLionProjects/Panorama2Cubemap/data/Annotations/2_TS_10_05.xml")
+    cvat_doc.parse()
+    output_doc = get_smot_tracker_data(
+        '/home/flo/Workspace/OtherTrackers/smot/smot_data/TS_10_5/ihtls/TS_10_5_ihtls_fn.mat'
+        , cvat_doc)
+    output_doc.to_format("MOT16", 'data/mot_fmt_results/smot_TS_10_5.txt')
+
     data_directory = "/home/flo/PycharmProjects/ba-evaluation/data/"
 
     create_evaluation_test_directory(data_directory + "eval_root/", data_directory + "mot_fmt_results/smot_TS_10_5.txt",
-                                 data_directory + "cvatgt/TS_10_5.xml", "SMOT", "TS_10_5")
+                                 data_directory + "cvatgt/TS_10_5.xml", "SMOT", "TS_10_5", bystander_path="/home/flo/PycharmProjects/ba-evaluation/data/bystanders/TS_10_05 Bystanders.xml")
