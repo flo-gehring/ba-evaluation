@@ -12,11 +12,12 @@ import imutils
 import time
 import cv2
 import os
+import json
 from setup_tracker_directories import get_filename
 
 # construct the argument parse and parse the arguments
 
-mask_rcnn_base_path = "/home/flo/PycharmProjects/ba-evaluation/panoramadetect/mask-rcnn/mask-rcnn-coco"
+mask_rcnn_base_path = "\\".join([ "mask-rcnn", "mask-rcnn-coco"])
 
 
 print(cv2.getBuildInformation())
@@ -26,6 +27,8 @@ labelsPath = os.path.sep.join([mask_rcnn_base_path, "object_detection_classes_co
 LABELS = open(labelsPath).read().strip().split("\n")
 
 VIDEO_PATH = "/home/flo/Videos/TS_10_5.mp4"
+WIN_VID_PATH = "C:\\Users\\Florian Gehring\\Workspace\\Uni\\Videos\\TS_10_5.mp4"
+VIDEO_PATH = WIN_VID_PATH
 
 MASK_RCNN_CONF_THRESHOLD = 0.6
 DETECTION_RCNN_CONF_THRESHOLD = 0.6
@@ -49,6 +52,8 @@ net = cv2.dnn.readNetFromTensorflow(weightsPath, configPath)
 vs = cv2.VideoCapture(VIDEO_PATH)
 writer = None
 
+detection_file = open("detections.json", "w")
+detection_file.write("[")
 # try to determine the total number of frames in the video file
 try:
 	prop = cv2.cv.CV_CAP_PROP_FRAME_COUNT if imutils.is_cv2() \
@@ -63,10 +68,12 @@ except:
 	total = -1
 
 WINDOW_NAME = "MaskRCNN"
-cv2.namedWindow(WINDOW_NAME)
+# cv2.namedWindow(WINDOW_NAME)
 
 # loop over frames from the video file stream
+frame_counter = -1
 while True:
+	frame_counter += 1
 	# read the next frame from the file
 	(grabbed, frame) = vs.read()
 
@@ -87,6 +94,7 @@ while True:
 	end = time.time()
 
 	# loop over the number of detected objects
+	frame_obj_list = list()
 	for i in range(0, boxes.shape[2]):
 		# extract the class ID of the detection along with the
 		# confidence (i.e., probability) associated with the
@@ -125,6 +133,15 @@ while True:
 			color = COLORS[classID]
 			blended = ((0.4 * color) + (0.6 * roi)).astype("uint8")
 
+			frame_obj_list.append({
+				"classID": int(classID),
+				"confidence": float(confidence),
+				"x": float(startX),
+				"y": float(startY),
+				"width": float(boxW),
+				"height": float(boxH)
+			})
+
 			# store the blended ROI in the original frame
 			frame[startY:endY, startX:endX][mask] = blended
 
@@ -140,6 +157,14 @@ while True:
 				cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
 
 	# check if the video writer is None
+	frame_detections = {"frame": frame_counter,
+						"detections": frame_obj_list
+						}
+	json_string = json.dumps(frame_detections)
+	detection_file.write(json_string)
+	detection_file.write(", \n")
+	print(json_string)
+
 	if writer is None:
 		# initialize our video writer
 		fourcc = cv2.VideoWriter_fourcc(*"MJPG")
@@ -154,9 +179,9 @@ while True:
 				elap * total))
 
 	# write the output frame to disk
-	writer.write(frame)
-	# cv2.imshow(WINDOW_NAME, frame)
-
+	#writer.write(frame)
+	#cv2.imshow(WINDOW_NAME, frame)
+detection_file.write("]")
 # release the file pointers
 print("[INFO] cleaning up...")
 writer.release()
