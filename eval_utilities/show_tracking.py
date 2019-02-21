@@ -58,7 +58,6 @@ def show_tracking(videopath, mot_path, savepath='', show=False, delimiter='\t'):
                 cv2.imshow(window_name, frame)
                 cv2.waitKey(20)
 
-
             ret, frame = videocapture.read()
             current_frame =int(line[0])
 

@@ -11,6 +11,17 @@ from formatchecker import FormatChecker
 from utilities import write_stderr_red
 import logging
 LOG = logging.getLogger(__name__)
+TRACK_INFO_NUM = 25
+logging.addLevelName(TRACK_INFO_NUM, "TRACK_INFO")
+
+
+def debugv(self, message, *args, **kws):
+    if self.isEnabledFor(TRACK_INFO_NUM):
+        # Yes, logger takes its '*args' as 'args'.
+        self._log(TRACK_INFO_NUM, message, args, **kws)
+
+
+logging.Logger.debugv = debugv
 
 
 class MOTEvaluation:
@@ -106,7 +117,7 @@ class MOTEvaluation:
             self.hypothesis_ids_.add(h["id"])
         
         LOG.info("")
-        LOG.info("Timestamp: %s" % timestamp)
+        LOG.log(TRACK_INFO_NUM, "Timestamp: %s" % timestamp)
         
         LOG.info("DIFF")
         LOG.info("DIFF Time %.2f" % timestamp)
@@ -241,7 +252,7 @@ class MOTEvaluation:
             # Count "recoverable" and "non-recoverable" mismatches
             # "recoverable" mismatches
             if gt_id in self.gt_map_ and self.gt_map_[gt_id] != hypo_id and not groundtruths[gt_index].get("dco",False):
-                LOG.info("Look ma! We got a recoverable mismatch over here! (%s-%s) -> (%s-%s)" % (gt_id, self.gt_map_[gt_id], gt_id, hypo_id))
+                LOG.log(TRACK_INFO_NUM, "Look ma! We got a recoverable mismatch over here! (%s-%s) -> (%s-%s)" % (gt_id, self.gt_map_[gt_id], gt_id, hypo_id))
                 self.recoverable_mismatches_ += 1
 
             # "non-recoverable" mismatches
@@ -252,7 +263,7 @@ class MOTEvaluation:
 
                 assert len(old_gt_dco) <= 1;
                 if not (groundtruths[gt_index].get("dco",False) and len(old_gt_dco) == 1):
-                    LOG.info("Look ma! We got a non-recoverable mismatch over here! (%s-%s) -> (%s-%s)" % (self.hypo_map_[hypo_id], hypo_id, gt_id, hypo_id))
+                    LOG.log(TRACK_INFO_NUM, "Look ma! We got a non-recoverable mismatch over here! (%s-%s) -> (%s-%s)" % (self.hypo_map_[hypo_id], hypo_id, gt_id, hypo_id))
                     self.non_recoverable_mismatches_ += 1
 
             # Update yin-yang maps                    
@@ -270,7 +281,7 @@ class MOTEvaluation:
                 # Do not consider for mismatch, if both old gt and new gt are DCO
                 gt_with_mapping_gt_id_dco = filter(lambda g: g["id"] == mapping_gt_id and g.get("dco",False), groundtruths)
                 if len (gt_with_mapping_gt_id_dco) == 1 and groundtruths[gt_index].get("dco",False):
-                    LOG.info("Ground truths %s and %s are DCO. Not considering for mismatch." % (mapping_gt_id, gt_id))
+                    LOG.log(TRACK_INFO_NUM, "Ground truths %s and %s are DCO. Not considering for mismatch." % (mapping_gt_id, gt_id))
 #                    print "DIFF DCO %s" % (gt_id), groundtruths[gt_index]
                     
                 else:
@@ -278,7 +289,7 @@ class MOTEvaluation:
                 # New hypothesis for mapped ground truth found
                     if (mapping_gt_id == gt_id and mapping_hypo_id != hypo_id)\
                     or (mapping_gt_id != gt_id and mapping_hypo_id == hypo_id):
-                        LOG.info("Correspondence %s-%s contradicts mapping %s-%s. Counting as mismatch and updating mapping." % (gt_id, hypo_id, mapping_gt_id, mapping_hypo_id))
+                        LOG.log(TRACK_INFO_NUM, "Correspondence %s-%s contradicts mapping %s-%s. Counting as mismatch and updating mapping." % (gt_id, hypo_id, mapping_gt_id, mapping_hypo_id))
                         mismatcheslist.append("DIFF Mismatch %s-%s -> %s-%s" % (mapping_gt_id, mapping_hypo_id, gt_id, hypo_id))
                         self.mismatches_ = self.mismatches_ + 1
 
@@ -306,9 +317,9 @@ class MOTEvaluation:
 #                print "YIN: %d %d" % (self.recoverable_mismatches_, self.non_recoverable_mismatches_)
 #                assert(self.recoverable_mismatches_ + self.non_recoverable_mismatches_ == self.mismatches_)
             if(self.recoverable_mismatches_ + self.non_recoverable_mismatches_ != self.mismatches_):
-                LOG.info("Look, mismatches differ: g %d b %d  other %d" % (self.recoverable_mismatches_, self.non_recoverable_mismatches_, self.mismatches_))
-                LOG.info(self.gt_map_)
-                LOG.info(self.hypo_map_)
+                LOG.log(TRACK_INFO_NUM, "Look, mismatches differ: g %d b %d  other %d" % (self.recoverable_mismatches_, self.non_recoverable_mismatches_, self.mismatches_))
+                LOG.log(TRACK_INFO_NUM, (self.gt_map_))
+                LOG.log(TRACK_INFO_NUM, self.hypo_map_)
         
             # Save (overwrite) mapping even if ground truth is dco
             self.mappings_[gt_id] = hypo_id # Update mapping
@@ -342,9 +353,9 @@ class MOTEvaluation:
         for groundtruth in groundtruths:
             LOG.info("DCO:", groundtruth)
             if groundtruth["id"] not in correspondences.keys() and groundtruth.get("dco", False) != True:
-                LOG.info("Miss: %s" % groundtruth["id"])
-                LOG.info("DEBUGMISS: %.2f" % timestamp)
-                LOG.info("DIFF Miss %s" % groundtruth["id"])
+                LOG.log(TRACK_INFO_NUM, "Miss: %s" % groundtruth["id"])
+                LOG.log(TRACK_INFO_NUM, "DEBUGMISS: %.2f" % timestamp)
+                LOG.log(TRACK_INFO_NUM, "DIFF Miss %s" % groundtruth["id"])
                 groundtruth["class"] = "miss"
                 visualDebugAnnotations.append(groundtruth)
                 self.misses_ += 1
@@ -352,8 +363,8 @@ class MOTEvaluation:
         # Count false positives
         for hypothesis in hypotheses:
             if hypothesis["id"] not in correspondences.values():
-                LOG.info("False positive: %s" % hypothesis["id"])
-                LOG.info("DIFF False positive %s" % hypothesis["id"])
+                LOG.log(TRACK_INFO_NUM, "False positive: %s" % hypothesis["id"])
+                LOG.log(TRACK_INFO_NUM, "DIFF False positive %s" % hypothesis["id"])
                 self.false_positives_ += 1
                 visualDebugAnnotations.append(hypothesis)
                 hypothesis["class"] = "false positive"

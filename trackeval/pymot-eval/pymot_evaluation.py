@@ -71,7 +71,9 @@ def create_pymot_eval_directory(path_to_gt, path_to_result, path_to_target_direc
     get_into_dir(tracker_name)
     get_into_dir(video_name)
 
-    logging.basicConfig(filename=video_name + ".LOG", level=logging.INFO)
+    logging.basicConfig(level=25)
+    file_handler = logging.FileHandler(video_name + ".LOG", mode="w")
+    LOG.addHandler(file_handler)
     evaluator = get_evaluator(path_to_gt, path_to_result, path_to_bystanders)
     evaluator.evaluate()
     evaluator.getRelativeStatistics()
@@ -92,14 +94,13 @@ def create_pymot_eval_directory(path_to_gt, path_to_result, path_to_target_direc
     rel_stat_file.close()
     vis_debug_file.close()
 
+    file_handler.close()
+
     if path_to_source_vid is not None:
         filename_debug_vid = "debug_" + video_name + ".mp4"
         create_video("visual_debug.json", path_to_source_vid, path_to_output=filename_debug_vid)
         show_tracking(abs_path_to_source_vid, abs_path_to_result,
                       savepath='tracking_' + video_name + '.mp4',delimiter=',')
-
-
-    logging.basicConfig()
 
 
 def setup_mot_doc(filepath, bystander_doc=None):
@@ -124,7 +125,7 @@ def setup_mot_doc(filepath, bystander_doc=None):
     return cvat_doc
 
 
-tracker_names = ['PANORAMA_TRACKER']
+tracker_names = ['PANORAMA_TRACKER', 'SMOT', 'DEEPSORT']
 
 for name in tracker_names:
 
@@ -134,5 +135,5 @@ for name in tracker_names:
         '/home/flo/PycharmProjects/ba-evaluation/data/pymot_eval',
         name,
         'TS_10_5',
-        path_to_bystanders='/home/flo/PycharmProjects/ba-evaluation/data/bystanders/TS_10_05 Bystanders.xml',
-        path_to_source_vid='/home/flo/PycharmProjects/ba-evaluation/data/videos/TS_10_5.mp4')
+        path_to_bystanders='/home/flo/PycharmProjects/ba-evaluation/data/bystanders/TS_10_05 Bystanders.xml')
+       # path_to_source_vid='/home/flo/PycharmProjects/ba-evaluation/data/videos/TS_10_5.mp4')
