@@ -1,0 +1,2295 @@
+Timestamp: 0
+Miss: 0
+DEBUGMISS: 0.00
+DIFF Miss 0
+Miss: 1
+DEBUGMISS: 0.00
+DIFF Miss 1
+Miss: 2
+DEBUGMISS: 0.00
+DIFF Miss 2
+Miss: 3
+DEBUGMISS: 0.00
+DIFF Miss 3
+Miss: 4
+DEBUGMISS: 0.00
+DIFF Miss 4
+Miss: 5
+DEBUGMISS: 0.00
+DIFF Miss 5
+Miss: 6
+DEBUGMISS: 0.00
+DIFF Miss 6
+Miss: 7
+DEBUGMISS: 0.00
+DIFF Miss 7
+Miss: 8
+DEBUGMISS: 0.00
+DIFF Miss 8
+Miss: 9
+DEBUGMISS: 0.00
+DIFF Miss 9
+Miss: 10
+DEBUGMISS: 0.00
+DIFF Miss 10
+Timestamp: 1
+Miss: 0
+DEBUGMISS: 1.00
+DIFF Miss 0
+Miss: 1
+DEBUGMISS: 1.00
+DIFF Miss 1
+Miss: 2
+DEBUGMISS: 1.00
+DIFF Miss 2
+Miss: 3
+DEBUGMISS: 1.00
+DIFF Miss 3
+Miss: 4
+DEBUGMISS: 1.00
+DIFF Miss 4
+Miss: 5
+DEBUGMISS: 1.00
+DIFF Miss 5
+Miss: 6
+DEBUGMISS: 1.00
+DIFF Miss 6
+Miss: 7
+DEBUGMISS: 1.00
+DIFF Miss 7
+Miss: 8
+DEBUGMISS: 1.00
+DIFF Miss 8
+Miss: 9
+DEBUGMISS: 1.00
+DIFF Miss 9
+Miss: 10
+DEBUGMISS: 1.00
+DIFF Miss 10
+Timestamp: 2
+Miss: 0
+DEBUGMISS: 2.00
+DIFF Miss 0
+Miss: 1
+DEBUGMISS: 2.00
+DIFF Miss 1
+Miss: 2
+DEBUGMISS: 2.00
+DIFF Miss 2
+Miss: 3
+DEBUGMISS: 2.00
+DIFF Miss 3
+Miss: 4
+DEBUGMISS: 2.00
+DIFF Miss 4
+Miss: 5
+DEBUGMISS: 2.00
+DIFF Miss 5
+Miss: 6
+DEBUGMISS: 2.00
+DIFF Miss 6
+Miss: 7
+DEBUGMISS: 2.00
+DIFF Miss 7
+Miss: 8
+DEBUGMISS: 2.00
+DIFF Miss 8
+Miss: 9
+DEBUGMISS: 2.00
+DIFF Miss 9
+Miss: 10
+DEBUGMISS: 2.00
+DIFF Miss 10
+Timestamp: 3
+Miss: 3
+DEBUGMISS: 3.00
+DIFF Miss 3
+Timestamp: 4
+Miss: 3
+DEBUGMISS: 4.00
+DIFF Miss 3
+Timestamp: 5
+Miss: 3
+DEBUGMISS: 5.00
+DIFF Miss 3
+Timestamp: 6
+Miss: 3
+DEBUGMISS: 6.00
+DIFF Miss 3
+Timestamp: 7
+Miss: 3
+DEBUGMISS: 7.00
+DIFF Miss 3
+Timestamp: 8
+Miss: 3
+DEBUGMISS: 8.00
+DIFF Miss 3
+Timestamp: 9
+Miss: 3
+DEBUGMISS: 9.00
+DIFF Miss 3
+Timestamp: 10
+Miss: 3
+DEBUGMISS: 10.00
+DIFF Miss 3
+Timestamp: 11
+Look ma! We got a non-recoverable mismatch over here! (4-3) -> (3-3)
+Correspondence 3-3 contradicts mapping 4-3. Counting as mismatch and updating mapping.
+Miss: 4
+DEBUGMISS: 11.00
+DIFF Miss 4
+Timestamp: 12
+Miss: 4
+DEBUGMISS: 12.00
+DIFF Miss 4
+Timestamp: 13
+Miss: 4
+DEBUGMISS: 13.00
+DIFF Miss 4
+Timestamp: 14
+Miss: 4
+DEBUGMISS: 14.00
+DIFF Miss 4
+Timestamp: 15
+Miss: 4
+DEBUGMISS: 15.00
+DIFF Miss 4
+Timestamp: 16
+Miss: 4
+DEBUGMISS: 16.00
+DIFF Miss 4
+Timestamp: 17
+Miss: 4
+DEBUGMISS: 17.00
+DIFF Miss 4
+Timestamp: 18
+Miss: 4
+DEBUGMISS: 18.00
+DIFF Miss 4
+Timestamp: 19
+Miss: 4
+DEBUGMISS: 19.00
+DIFF Miss 4
+Timestamp: 20
+Miss: 4
+DEBUGMISS: 20.00
+DIFF Miss 4
+Timestamp: 21
+Miss: 4
+DEBUGMISS: 21.00
+DIFF Miss 4
+Timestamp: 22
+Miss: 4
+DEBUGMISS: 22.00
+DIFF Miss 4
+Timestamp: 23
+Look ma! We got a non-recoverable mismatch over here! (3-3) -> (4-3)
+Correspondence 4-3 contradicts mapping 3-3. Counting as mismatch and updating mapping.
+Miss: 3
+DEBUGMISS: 23.00
+DIFF Miss 3
+Timestamp: 24
+Miss: 3
+DEBUGMISS: 24.00
+DIFF Miss 3
+Timestamp: 25
+Miss: 3
+DEBUGMISS: 25.00
+DIFF Miss 3
+Timestamp: 26
+Miss: 3
+DEBUGMISS: 26.00
+DIFF Miss 3
+Timestamp: 27
+Miss: 3
+DEBUGMISS: 27.00
+DIFF Miss 3
+Timestamp: 28
+Miss: 3
+DEBUGMISS: 28.00
+DIFF Miss 3
+Timestamp: 29
+Miss: 3
+DEBUGMISS: 29.00
+DIFF Miss 3
+Timestamp: 30
+Miss: 3
+DEBUGMISS: 30.00
+DIFF Miss 3
+Timestamp: 31
+Miss: 3
+DEBUGMISS: 31.00
+DIFF Miss 3
+Timestamp: 32
+Miss: 3
+DEBUGMISS: 32.00
+DIFF Miss 3
+Timestamp: 33
+Miss: 3
+DEBUGMISS: 33.00
+DIFF Miss 3
+Timestamp: 34
+Miss: 3
+DEBUGMISS: 34.00
+DIFF Miss 3
+Timestamp: 35
+Miss: 3
+DEBUGMISS: 35.00
+DIFF Miss 3
+Timestamp: 36
+Miss: 3
+DEBUGMISS: 36.00
+DIFF Miss 3
+Timestamp: 37
+Miss: 3
+DEBUGMISS: 37.00
+DIFF Miss 3
+Timestamp: 38
+Miss: 3
+DEBUGMISS: 38.00
+DIFF Miss 3
+Timestamp: 39
+Miss: 3
+DEBUGMISS: 39.00
+DIFF Miss 3
+Timestamp: 40
+Miss: 3
+DEBUGMISS: 40.00
+DIFF Miss 3
+Timestamp: 41
+Miss: 3
+DEBUGMISS: 41.00
+DIFF Miss 3
+Timestamp: 42
+Look ma! We got a non-recoverable mismatch over here! (4-3) -> (3-3)
+Correspondence 3-3 contradicts mapping 4-3. Counting as mismatch and updating mapping.
+Miss: 4
+DEBUGMISS: 42.00
+DIFF Miss 4
+Timestamp: 43
+Miss: 4
+DEBUGMISS: 43.00
+DIFF Miss 4
+Timestamp: 44
+Miss: 4
+DEBUGMISS: 44.00
+DIFF Miss 4
+Timestamp: 45
+Look ma! We got a recoverable mismatch over here! (4-3) -> (4-10)
+Look, mismatches differ: g 1 b 3  other 3
+{'10': '6', '1': '5', '0': '4', '3': '3', '2': '2', '5': '0', '4': '10', '7': '9', '6': '1', '9': '7', '8': '8'}
+{'10': '4', '1': '6', '0': '5', '3': '3', '2': '2', '5': '1', '4': '0', '7': '9', '6': '10', '9': '7', '8': '8'}
+Timestamp: 46
+Timestamp: 47
+Timestamp: 48
+Timestamp: 49
+Timestamp: 50
+Timestamp: 51
+Timestamp: 52
+Timestamp: 53
+Timestamp: 54
+Timestamp: 55
+Timestamp: 56
+Timestamp: 57
+Timestamp: 58
+Timestamp: 59
+Timestamp: 60
+Timestamp: 61
+Timestamp: 62
+Timestamp: 63
+Timestamp: 64
+Timestamp: 65
+Timestamp: 66
+Timestamp: 67
+Timestamp: 68
+Timestamp: 69
+Timestamp: 70
+Timestamp: 71
+Timestamp: 72
+Timestamp: 73
+Timestamp: 74
+Timestamp: 75
+Timestamp: 76
+Timestamp: 77
+Timestamp: 78
+Timestamp: 79
+Timestamp: 80
+Timestamp: 81
+Timestamp: 82
+Timestamp: 83
+Timestamp: 84
+Timestamp: 85
+Timestamp: 86
+Timestamp: 87
+Timestamp: 88
+Timestamp: 89
+Timestamp: 90
+Timestamp: 91
+Timestamp: 92
+Timestamp: 93
+Timestamp: 94
+Timestamp: 95
+Timestamp: 96
+Timestamp: 97
+Timestamp: 98
+Timestamp: 99
+Timestamp: 100
+Timestamp: 101
+Timestamp: 102
+Timestamp: 103
+Timestamp: 104
+Timestamp: 105
+Timestamp: 106
+Timestamp: 107
+Timestamp: 108
+Timestamp: 109
+Timestamp: 110
+Timestamp: 111
+Timestamp: 112
+False positive: 11
+DIFF False positive 11
+Timestamp: 113
+False positive: 11
+DIFF False positive 11
+Timestamp: 114
+Miss: 7
+DEBUGMISS: 114.00
+DIFF Miss 7
+False positive: 11
+DIFF False positive 11
+Timestamp: 115
+False positive: 11
+DIFF False positive 11
+False positive: 12
+DIFF False positive 12
+Timestamp: 116
+False positive: 11
+DIFF False positive 11
+False positive: 12
+DIFF False positive 12
+Timestamp: 117
+False positive: 11
+DIFF False positive 11
+False positive: 12
+DIFF False positive 12
+Timestamp: 118
+False positive: 11
+DIFF False positive 11
+False positive: 12
+DIFF False positive 12
+Timestamp: 119
+Miss: 7
+DEBUGMISS: 119.00
+DIFF Miss 7
+False positive: 11
+DIFF False positive 11
+False positive: 12
+DIFF False positive 12
+Timestamp: 120
+Miss: 7
+DEBUGMISS: 120.00
+DIFF Miss 7
+False positive: 11
+DIFF False positive 11
+False positive: 12
+DIFF False positive 12
+Timestamp: 121
+Miss: 7
+DEBUGMISS: 121.00
+DIFF Miss 7
+False positive: 11
+DIFF False positive 11
+Timestamp: 122
+Look ma! We got a recoverable mismatch over here! (7-9) -> (7-11)
+Correspondence 7-11 contradicts mapping 7-9. Counting as mismatch and updating mapping.
+Look, mismatches differ: g 2 b 3  other 4
+{'10': '6', '1': '5', '0': '4', '3': '3', '2': '2', '5': '0', '4': '10', '7': '11', '6': '1', '9': '7', '8': '8'}
+{'11': '7', '10': '4', '1': '6', '0': '5', '3': '3', '2': '2', '5': '1', '4': '0', '7': '9', '6': '10', '9': '7', '8': '8'}
+Timestamp: 123
+False positive: 13
+DIFF False positive 13
+Timestamp: 124
+Miss: 1
+DEBUGMISS: 124.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 13
+DIFF False positive 13
+Timestamp: 125
+Miss: 1
+DEBUGMISS: 125.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 13
+DIFF False positive 13
+Timestamp: 126
+Miss: 1
+DEBUGMISS: 126.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 13
+DIFF False positive 13
+Timestamp: 127
+Miss: 1
+DEBUGMISS: 127.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 13
+DIFF False positive 13
+Timestamp: 128
+Miss: 1
+DEBUGMISS: 128.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 9
+DIFF False positive 9
+False positive: 13
+DIFF False positive 13
+Timestamp: 129
+Look ma! We got a recoverable mismatch over here! (7-11) -> (7-9)
+Correspondence 7-9 contradicts mapping 7-11. Counting as mismatch and updating mapping.
+Look, mismatches differ: g 3 b 3  other 5
+{'10': '6', '1': '5', '0': '4', '3': '3', '2': '2', '5': '0', '4': '10', '7': '9', '6': '1', '9': '7', '8': '8'}
+{'11': '7', '10': '4', '1': '6', '0': '5', '3': '3', '2': '2', '5': '1', '4': '0', '7': '9', '6': '10', '9': '7', '8': '8'}
+Miss: 1
+DEBUGMISS: 129.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 13
+DIFF False positive 13
+Timestamp: 130
+Miss: 1
+DEBUGMISS: 130.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 13
+DIFF False positive 13
+Timestamp: 131
+Miss: 1
+DEBUGMISS: 131.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 13
+DIFF False positive 13
+Timestamp: 132
+Miss: 1
+DEBUGMISS: 132.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 13
+DIFF False positive 13
+Timestamp: 133
+Miss: 1
+DEBUGMISS: 133.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 13
+DIFF False positive 13
+Timestamp: 134
+Miss: 1
+DEBUGMISS: 134.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 13
+DIFF False positive 13
+Timestamp: 135
+Miss: 1
+DEBUGMISS: 135.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 13
+DIFF False positive 13
+Timestamp: 136
+Miss: 1
+DEBUGMISS: 136.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 13
+DIFF False positive 13
+Timestamp: 137
+Miss: 1
+DEBUGMISS: 137.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 13
+DIFF False positive 13
+Timestamp: 138
+Miss: 1
+DEBUGMISS: 138.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 13
+DIFF False positive 13
+Timestamp: 139
+Miss: 1
+DEBUGMISS: 139.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 13
+DIFF False positive 13
+Timestamp: 140
+Miss: 1
+DEBUGMISS: 140.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 12
+DIFF False positive 12
+False positive: 13
+DIFF False positive 13
+Timestamp: 141
+Miss: 1
+DEBUGMISS: 141.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 12
+DIFF False positive 12
+Timestamp: 142
+Miss: 1
+DEBUGMISS: 142.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 12
+DIFF False positive 12
+Timestamp: 143
+Miss: 1
+DEBUGMISS: 143.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 12
+DIFF False positive 12
+Timestamp: 144
+Miss: 1
+DEBUGMISS: 144.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 12
+DIFF False positive 12
+Timestamp: 145
+Miss: 1
+DEBUGMISS: 145.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+Timestamp: 146
+Miss: 1
+DEBUGMISS: 146.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+Timestamp: 147
+Miss: 1
+DEBUGMISS: 147.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+Timestamp: 148
+Miss: 1
+DEBUGMISS: 148.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+Timestamp: 149
+Miss: 1
+DEBUGMISS: 149.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+Timestamp: 150
+Miss: 1
+DEBUGMISS: 150.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+Timestamp: 151
+Miss: 1
+DEBUGMISS: 151.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+Timestamp: 152
+Miss: 1
+DEBUGMISS: 152.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+Timestamp: 153
+Miss: 1
+DEBUGMISS: 153.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 12
+DIFF False positive 12
+Timestamp: 154
+Miss: 1
+DEBUGMISS: 154.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 12
+DIFF False positive 12
+Timestamp: 155
+Miss: 1
+DEBUGMISS: 155.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 12
+DIFF False positive 12
+Timestamp: 156
+Miss: 1
+DEBUGMISS: 156.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 12
+DIFF False positive 12
+Timestamp: 157
+Miss: 1
+DEBUGMISS: 157.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 12
+DIFF False positive 12
+Timestamp: 158
+Miss: 1
+DEBUGMISS: 158.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 12
+DIFF False positive 12
+Timestamp: 159
+Miss: 1
+DEBUGMISS: 159.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 12
+DIFF False positive 12
+Timestamp: 160
+Miss: 1
+DEBUGMISS: 160.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 12
+DIFF False positive 12
+Timestamp: 161
+Miss: 1
+DEBUGMISS: 161.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 12
+DIFF False positive 12
+Timestamp: 162
+Miss: 1
+DEBUGMISS: 162.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 12
+DIFF False positive 12
+Timestamp: 163
+Miss: 1
+DEBUGMISS: 163.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 12
+DIFF False positive 12
+Timestamp: 164
+Miss: 1
+DEBUGMISS: 164.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 12
+DIFF False positive 12
+False positive: 13
+DIFF False positive 13
+Timestamp: 165
+Miss: 1
+DEBUGMISS: 165.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 13
+DIFF False positive 13
+Timestamp: 166
+Miss: 1
+DEBUGMISS: 166.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 13
+DIFF False positive 13
+Timestamp: 167
+Miss: 1
+DEBUGMISS: 167.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 13
+DIFF False positive 13
+Timestamp: 168
+Miss: 1
+DEBUGMISS: 168.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 13
+DIFF False positive 13
+Timestamp: 169
+Miss: 1
+DEBUGMISS: 169.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 13
+DIFF False positive 13
+Timestamp: 170
+Miss: 1
+DEBUGMISS: 170.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 13
+DIFF False positive 13
+Timestamp: 171
+Miss: 1
+DEBUGMISS: 171.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 13
+DIFF False positive 13
+Timestamp: 172
+Miss: 1
+DEBUGMISS: 172.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+False positive: 13
+DIFF False positive 13
+Timestamp: 173
+Miss: 1
+DEBUGMISS: 173.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+Timestamp: 174
+Miss: 1
+DEBUGMISS: 174.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+Timestamp: 175
+Miss: 1
+DEBUGMISS: 175.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+Timestamp: 176
+Miss: 1
+DEBUGMISS: 176.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+Timestamp: 177
+Miss: 1
+DEBUGMISS: 177.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+Timestamp: 178
+Miss: 1
+DEBUGMISS: 178.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+Timestamp: 179
+Miss: 1
+DEBUGMISS: 179.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+Timestamp: 180
+Miss: 1
+DEBUGMISS: 180.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+Timestamp: 181
+Miss: 1
+DEBUGMISS: 181.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+Timestamp: 182
+Miss: 1
+DEBUGMISS: 182.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+Timestamp: 183
+Miss: 1
+DEBUGMISS: 183.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+Timestamp: 184
+Miss: 1
+DEBUGMISS: 184.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+Timestamp: 185
+Miss: 1
+DEBUGMISS: 185.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+Timestamp: 186
+Miss: 1
+DEBUGMISS: 186.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+Timestamp: 187
+Miss: 1
+DEBUGMISS: 187.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+Timestamp: 188
+Miss: 1
+DEBUGMISS: 188.00
+DIFF Miss 1
+False positive: 5
+DIFF False positive 5
+Timestamp: 189
+Miss: 1
+DEBUGMISS: 189.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 189.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 190
+Miss: 1
+DEBUGMISS: 190.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 190.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 191
+Miss: 1
+DEBUGMISS: 191.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 191.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 192
+Miss: 1
+DEBUGMISS: 192.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 192.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 193
+Miss: 1
+DEBUGMISS: 193.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 193.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 194
+Miss: 1
+DEBUGMISS: 194.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 194.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 195
+Miss: 1
+DEBUGMISS: 195.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 195.00
+DIFF Miss 5
+Miss: 7
+DEBUGMISS: 195.00
+DIFF Miss 7
+False positive: 5
+DIFF False positive 5
+Timestamp: 196
+Miss: 1
+DEBUGMISS: 196.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 196.00
+DIFF Miss 5
+Miss: 7
+DEBUGMISS: 196.00
+DIFF Miss 7
+False positive: 5
+DIFF False positive 5
+Timestamp: 197
+Miss: 1
+DEBUGMISS: 197.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 197.00
+DIFF Miss 5
+Miss: 7
+DEBUGMISS: 197.00
+DIFF Miss 7
+False positive: 5
+DIFF False positive 5
+Timestamp: 198
+Miss: 1
+DEBUGMISS: 198.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 198.00
+DIFF Miss 5
+Miss: 7
+DEBUGMISS: 198.00
+DIFF Miss 7
+False positive: 5
+DIFF False positive 5
+Timestamp: 199
+Miss: 1
+DEBUGMISS: 199.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 199.00
+DIFF Miss 5
+Miss: 7
+DEBUGMISS: 199.00
+DIFF Miss 7
+False positive: 5
+DIFF False positive 5
+Timestamp: 200
+Miss: 1
+DEBUGMISS: 200.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 200.00
+DIFF Miss 5
+Miss: 7
+DEBUGMISS: 200.00
+DIFF Miss 7
+False positive: 5
+DIFF False positive 5
+Timestamp: 201
+Miss: 1
+DEBUGMISS: 201.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 201.00
+DIFF Miss 5
+Miss: 7
+DEBUGMISS: 201.00
+DIFF Miss 7
+False positive: 5
+DIFF False positive 5
+Timestamp: 202
+Miss: 1
+DEBUGMISS: 202.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 202.00
+DIFF Miss 5
+Miss: 7
+DEBUGMISS: 202.00
+DIFF Miss 7
+False positive: 5
+DIFF False positive 5
+Timestamp: 203
+Miss: 1
+DEBUGMISS: 203.00
+DIFF Miss 1
+Miss: 7
+DEBUGMISS: 203.00
+DIFF Miss 7
+False positive: 5
+DIFF False positive 5
+Timestamp: 204
+Miss: 1
+DEBUGMISS: 204.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 204.00
+DIFF Miss 5
+Miss: 7
+DEBUGMISS: 204.00
+DIFF Miss 7
+False positive: 5
+DIFF False positive 5
+Timestamp: 205
+Miss: 1
+DEBUGMISS: 205.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 205.00
+DIFF Miss 5
+Miss: 7
+DEBUGMISS: 205.00
+DIFF Miss 7
+False positive: 5
+DIFF False positive 5
+Timestamp: 206
+Miss: 1
+DEBUGMISS: 206.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 206.00
+DIFF Miss 5
+Miss: 7
+DEBUGMISS: 206.00
+DIFF Miss 7
+False positive: 5
+DIFF False positive 5
+Timestamp: 207
+Miss: 1
+DEBUGMISS: 207.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 207.00
+DIFF Miss 5
+Miss: 7
+DEBUGMISS: 207.00
+DIFF Miss 7
+False positive: 5
+DIFF False positive 5
+Timestamp: 208
+Miss: 1
+DEBUGMISS: 208.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 208.00
+DIFF Miss 5
+Miss: 7
+DEBUGMISS: 208.00
+DIFF Miss 7
+False positive: 5
+DIFF False positive 5
+Timestamp: 209
+Miss: 1
+DEBUGMISS: 209.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 209.00
+DIFF Miss 5
+Miss: 7
+DEBUGMISS: 209.00
+DIFF Miss 7
+False positive: 5
+DIFF False positive 5
+Timestamp: 210
+Look ma! We got a recoverable mismatch over here! (7-9) -> (7-15)
+Correspondence 7-15 contradicts mapping 7-9. Counting as mismatch and updating mapping.
+Look, mismatches differ: g 4 b 3  other 6
+{'10': '6', '1': '5', '0': '4', '3': '3', '2': '2', '5': '0', '4': '10', '7': '15', '6': '1', '9': '7', '8': '8'}
+{'11': '7', '10': '4', '15': '7', '1': '6', '0': '5', '3': '3', '2': '2', '5': '1', '4': '0', '7': '9', '6': '10', '9': '7', '8': '8'}
+Miss: 1
+DEBUGMISS: 210.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 210.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 211
+Miss: 1
+DEBUGMISS: 211.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 211.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 212
+Miss: 1
+DEBUGMISS: 212.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 212.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 213
+Miss: 1
+DEBUGMISS: 213.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 213.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 214
+Miss: 1
+DEBUGMISS: 214.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 214.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 215
+Miss: 1
+DEBUGMISS: 215.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 215.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 216
+Miss: 1
+DEBUGMISS: 216.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 216.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 217
+Miss: 1
+DEBUGMISS: 217.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 217.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 218
+Miss: 1
+DEBUGMISS: 218.00
+DIFF Miss 1
+Miss: 3
+DEBUGMISS: 218.00
+DIFF Miss 3
+Miss: 5
+DEBUGMISS: 218.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 219
+Miss: 1
+DEBUGMISS: 219.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 219.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 220
+Miss: 1
+DEBUGMISS: 220.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 220.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 221
+Miss: 1
+DEBUGMISS: 221.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 221.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 222
+Miss: 1
+DEBUGMISS: 222.00
+DIFF Miss 1
+Miss: 4
+DEBUGMISS: 222.00
+DIFF Miss 4
+Miss: 5
+DEBUGMISS: 222.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 223
+Miss: 1
+DEBUGMISS: 223.00
+DIFF Miss 1
+Miss: 4
+DEBUGMISS: 223.00
+DIFF Miss 4
+Miss: 5
+DEBUGMISS: 223.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 224
+Miss: 1
+DEBUGMISS: 224.00
+DIFF Miss 1
+Miss: 4
+DEBUGMISS: 224.00
+DIFF Miss 4
+Miss: 5
+DEBUGMISS: 224.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 225
+Miss: 1
+DEBUGMISS: 225.00
+DIFF Miss 1
+Miss: 4
+DEBUGMISS: 225.00
+DIFF Miss 4
+Miss: 5
+DEBUGMISS: 225.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 226
+Miss: 1
+DEBUGMISS: 226.00
+DIFF Miss 1
+Miss: 4
+DEBUGMISS: 226.00
+DIFF Miss 4
+Miss: 5
+DEBUGMISS: 226.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 227
+Miss: 1
+DEBUGMISS: 227.00
+DIFF Miss 1
+Miss: 4
+DEBUGMISS: 227.00
+DIFF Miss 4
+Miss: 5
+DEBUGMISS: 227.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 228
+Miss: 1
+DEBUGMISS: 228.00
+DIFF Miss 1
+Miss: 4
+DEBUGMISS: 228.00
+DIFF Miss 4
+Miss: 5
+DEBUGMISS: 228.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 229
+Miss: 1
+DEBUGMISS: 229.00
+DIFF Miss 1
+Miss: 4
+DEBUGMISS: 229.00
+DIFF Miss 4
+Miss: 5
+DEBUGMISS: 229.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 230
+Miss: 1
+DEBUGMISS: 230.00
+DIFF Miss 1
+Miss: 4
+DEBUGMISS: 230.00
+DIFF Miss 4
+Miss: 5
+DEBUGMISS: 230.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 231
+Miss: 1
+DEBUGMISS: 231.00
+DIFF Miss 1
+Miss: 4
+DEBUGMISS: 231.00
+DIFF Miss 4
+Miss: 5
+DEBUGMISS: 231.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 232
+Miss: 1
+DEBUGMISS: 232.00
+DIFF Miss 1
+Miss: 4
+DEBUGMISS: 232.00
+DIFF Miss 4
+Miss: 5
+DEBUGMISS: 232.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 233
+Miss: 1
+DEBUGMISS: 233.00
+DIFF Miss 1
+Miss: 4
+DEBUGMISS: 233.00
+DIFF Miss 4
+Miss: 5
+DEBUGMISS: 233.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 234
+Miss: 1
+DEBUGMISS: 234.00
+DIFF Miss 1
+Miss: 4
+DEBUGMISS: 234.00
+DIFF Miss 4
+Miss: 5
+DEBUGMISS: 234.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 235
+Miss: 1
+DEBUGMISS: 235.00
+DIFF Miss 1
+Miss: 4
+DEBUGMISS: 235.00
+DIFF Miss 4
+Miss: 5
+DEBUGMISS: 235.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 236
+Miss: 1
+DEBUGMISS: 236.00
+DIFF Miss 1
+Miss: 4
+DEBUGMISS: 236.00
+DIFF Miss 4
+Miss: 5
+DEBUGMISS: 236.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 237
+Miss: 1
+DEBUGMISS: 237.00
+DIFF Miss 1
+Miss: 4
+DEBUGMISS: 237.00
+DIFF Miss 4
+Miss: 5
+DEBUGMISS: 237.00
+DIFF Miss 5
+Miss: 7
+DEBUGMISS: 237.00
+DIFF Miss 7
+False positive: 5
+DIFF False positive 5
+Timestamp: 238
+Miss: 1
+DEBUGMISS: 238.00
+DIFF Miss 1
+Miss: 4
+DEBUGMISS: 238.00
+DIFF Miss 4
+Miss: 5
+DEBUGMISS: 238.00
+DIFF Miss 5
+Miss: 7
+DEBUGMISS: 238.00
+DIFF Miss 7
+False positive: 5
+DIFF False positive 5
+Timestamp: 239
+Miss: 1
+DEBUGMISS: 239.00
+DIFF Miss 1
+Miss: 4
+DEBUGMISS: 239.00
+DIFF Miss 4
+Miss: 5
+DEBUGMISS: 239.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 240
+Miss: 1
+DEBUGMISS: 240.00
+DIFF Miss 1
+Miss: 4
+DEBUGMISS: 240.00
+DIFF Miss 4
+Miss: 5
+DEBUGMISS: 240.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 241
+Miss: 1
+DEBUGMISS: 241.00
+DIFF Miss 1
+Miss: 4
+DEBUGMISS: 241.00
+DIFF Miss 4
+Miss: 5
+DEBUGMISS: 241.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 242
+Miss: 1
+DEBUGMISS: 242.00
+DIFF Miss 1
+Miss: 4
+DEBUGMISS: 242.00
+DIFF Miss 4
+Miss: 5
+DEBUGMISS: 242.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 243
+Miss: 1
+DEBUGMISS: 243.00
+DIFF Miss 1
+Miss: 4
+DEBUGMISS: 243.00
+DIFF Miss 4
+Miss: 5
+DEBUGMISS: 243.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 244
+Miss: 1
+DEBUGMISS: 244.00
+DIFF Miss 1
+Miss: 5
+DEBUGMISS: 244.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 245
+Miss: 1
+DEBUGMISS: 245.00
+DIFF Miss 1
+Miss: 3
+DEBUGMISS: 245.00
+DIFF Miss 3
+Miss: 5
+DEBUGMISS: 245.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 246
+Miss: 1
+DEBUGMISS: 246.00
+DIFF Miss 1
+Miss: 3
+DEBUGMISS: 246.00
+DIFF Miss 3
+Miss: 5
+DEBUGMISS: 246.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 247
+Miss: 1
+DEBUGMISS: 247.00
+DIFF Miss 1
+Miss: 3
+DEBUGMISS: 247.00
+DIFF Miss 3
+Miss: 5
+DEBUGMISS: 247.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 248
+Miss: 1
+DEBUGMISS: 248.00
+DIFF Miss 1
+Miss: 3
+DEBUGMISS: 248.00
+DIFF Miss 3
+Miss: 5
+DEBUGMISS: 248.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 249
+Miss: 1
+DEBUGMISS: 249.00
+DIFF Miss 1
+Miss: 3
+DEBUGMISS: 249.00
+DIFF Miss 3
+Miss: 5
+DEBUGMISS: 249.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 250
+Miss: 1
+DEBUGMISS: 250.00
+DIFF Miss 1
+Miss: 3
+DEBUGMISS: 250.00
+DIFF Miss 3
+Miss: 5
+DEBUGMISS: 250.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 251
+Miss: 1
+DEBUGMISS: 251.00
+DIFF Miss 1
+Miss: 3
+DEBUGMISS: 251.00
+DIFF Miss 3
+Miss: 5
+DEBUGMISS: 251.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 252
+Miss: 1
+DEBUGMISS: 252.00
+DIFF Miss 1
+Miss: 3
+DEBUGMISS: 252.00
+DIFF Miss 3
+Miss: 5
+DEBUGMISS: 252.00
+DIFF Miss 5
+False positive: 5
+DIFF False positive 5
+Timestamp: 253
+Miss: 3
+DEBUGMISS: 253.00
+DIFF Miss 3
+Miss: 5
+DEBUGMISS: 253.00
+DIFF Miss 5
+Timestamp: 254
+Miss: 3
+DEBUGMISS: 254.00
+DIFF Miss 3
+Miss: 5
+DEBUGMISS: 254.00
+DIFF Miss 5
+Timestamp: 255
+Miss: 3
+DEBUGMISS: 255.00
+DIFF Miss 3
+Miss: 5
+DEBUGMISS: 255.00
+DIFF Miss 5
+Timestamp: 256
+Miss: 3
+DEBUGMISS: 256.00
+DIFF Miss 3
+Miss: 5
+DEBUGMISS: 256.00
+DIFF Miss 5
+Timestamp: 257
+Miss: 3
+DEBUGMISS: 257.00
+DIFF Miss 3
+Miss: 5
+DEBUGMISS: 257.00
+DIFF Miss 5
+Timestamp: 258
+Miss: 3
+DEBUGMISS: 258.00
+DIFF Miss 3
+Miss: 5
+DEBUGMISS: 258.00
+DIFF Miss 5
+Timestamp: 259
+Miss: 3
+DEBUGMISS: 259.00
+DIFF Miss 3
+Miss: 5
+DEBUGMISS: 259.00
+DIFF Miss 5
+Timestamp: 260
+Miss: 3
+DEBUGMISS: 260.00
+DIFF Miss 3
+Miss: 5
+DEBUGMISS: 260.00
+DIFF Miss 5
+Timestamp: 261
+Miss: 3
+DEBUGMISS: 261.00
+DIFF Miss 3
+Miss: 5
+DEBUGMISS: 261.00
+DIFF Miss 5
+Timestamp: 262
+Look ma! We got a recoverable mismatch over here! (5-0) -> (5-1)
+Look ma! We got a non-recoverable mismatch over here! (6-1) -> (5-1)
+Correspondence 5-1 contradicts mapping 5-0. Counting as mismatch and updating mapping.
+Correspondence 5-1 contradicts mapping 6-1. Counting as mismatch and updating mapping.
+Look, mismatches differ: g 5 b 4  other 8
+{'10': '6', '1': '5', '0': '4', '3': '3', '2': '2', '5': '1', '4': '10', '7': '15', '6': '1', '9': '7', '8': '8'}
+{'11': '7', '10': '4', '15': '7', '1': '5', '0': '5', '3': '3', '2': '2', '5': '1', '4': '0', '7': '9', '6': '10', '9': '7', '8': '8'}
+Miss: 3
+DEBUGMISS: 262.00
+DIFF Miss 3
+Miss: 6
+DEBUGMISS: 262.00
+DIFF Miss 6
+Timestamp: 263
+Miss: 3
+DEBUGMISS: 263.00
+DIFF Miss 3
+Miss: 6
+DEBUGMISS: 263.00
+DIFF Miss 6
+Timestamp: 264
+Miss: 3
+DEBUGMISS: 264.00
+DIFF Miss 3
+Miss: 6
+DEBUGMISS: 264.00
+DIFF Miss 6
+Timestamp: 265
+Miss: 3
+DEBUGMISS: 265.00
+DIFF Miss 3
+Miss: 6
+DEBUGMISS: 265.00
+DIFF Miss 6
+Timestamp: 266
+Miss: 3
+DEBUGMISS: 266.00
+DIFF Miss 3
+Miss: 6
+DEBUGMISS: 266.00
+DIFF Miss 6
+Timestamp: 267
+Miss: 3
+DEBUGMISS: 267.00
+DIFF Miss 3
+Miss: 6
+DEBUGMISS: 267.00
+DIFF Miss 6
+Timestamp: 268
+Miss: 3
+DEBUGMISS: 268.00
+DIFF Miss 3
+Miss: 6
+DEBUGMISS: 268.00
+DIFF Miss 6
+Timestamp: 269
+Miss: 3
+DEBUGMISS: 269.00
+DIFF Miss 3
+Miss: 6
+DEBUGMISS: 269.00
+DIFF Miss 6
+Timestamp: 270
+Miss: 3
+DEBUGMISS: 270.00
+DIFF Miss 3
+Miss: 6
+DEBUGMISS: 270.00
+DIFF Miss 6
+Timestamp: 271
+Miss: 6
+DEBUGMISS: 271.00
+DIFF Miss 6
+Timestamp: 272
+Miss: 6
+DEBUGMISS: 272.00
+DIFF Miss 6
+Timestamp: 273
+Miss: 6
+DEBUGMISS: 273.00
+DIFF Miss 6
+Timestamp: 274
+Miss: 6
+DEBUGMISS: 274.00
+DIFF Miss 6
+Timestamp: 275
+Miss: 6
+DEBUGMISS: 275.00
+DIFF Miss 6
+Timestamp: 276
+Miss: 6
+DEBUGMISS: 276.00
+DIFF Miss 6
+Timestamp: 277
+Miss: 6
+DEBUGMISS: 277.00
+DIFF Miss 6
+Timestamp: 278
+Miss: 6
+DEBUGMISS: 278.00
+DIFF Miss 6
+Timestamp: 279
+Miss: 6
+DEBUGMISS: 279.00
+DIFF Miss 6
+Timestamp: 280
+Miss: 6
+DEBUGMISS: 280.00
+DIFF Miss 6
+Timestamp: 281
+Miss: 6
+DEBUGMISS: 281.00
+DIFF Miss 6
+Timestamp: 282
+Miss: 6
+DEBUGMISS: 282.00
+DIFF Miss 6
+Timestamp: 283
+Miss: 6
+DEBUGMISS: 283.00
+DIFF Miss 6
+False positive: 17
+DIFF False positive 17
+Timestamp: 284
+Miss: 6
+DEBUGMISS: 284.00
+DIFF Miss 6
+False positive: 17
+DIFF False positive 17
+Timestamp: 285
+Miss: 6
+DEBUGMISS: 285.00
+DIFF Miss 6
+False positive: 17
+DIFF False positive 17
+Timestamp: 286
+Miss: 6
+DEBUGMISS: 286.00
+DIFF Miss 6
+False positive: 17
+DIFF False positive 17
+Timestamp: 287
+Look ma! We got a recoverable mismatch over here! (1-5) -> (1-17)
+Correspondence 1-17 contradicts mapping 1-5. Counting as mismatch and updating mapping.
+Look, mismatches differ: g 6 b 4  other 9
+{'10': '6', '1': '17', '0': '4', '3': '3', '2': '2', '5': '1', '4': '10', '7': '15', '6': '1', '9': '7', '8': '8'}
+{'11': '7', '10': '4', '15': '7', '17': '1', '1': '5', '0': '5', '3': '3', '2': '2', '5': '1', '4': '0', '7': '9', '6': '10', '9': '7', '8': '8'}
+Miss: 6
+DEBUGMISS: 287.00
+DIFF Miss 6
+Timestamp: 288
+Timestamp: 289
+Timestamp: 290
+Timestamp: 291
+Timestamp: 292
+Timestamp: 293
+Timestamp: 294
+Timestamp: 295
+Timestamp: 296
+Timestamp: 297
+Timestamp: 298
+Timestamp: 299
+Timestamp: 300
+Timestamp: 301
+Ground truths 3 and 3 are DCO. Not considering for mismatch.
+Look, mismatches differ: g 6 b 4  other 9
+{'10': '6', '1': '17', '0': '4', '3': '18', '2': '2', '5': '1', '4': '10', '7': '15', '6': '1', '9': '7', '8': '8'}
+{'11': '7', '10': '4', '15': '7', '17': '1', '18': '3', '1': '5', '0': '5', '3': '3', '2': '2', '5': '1', '4': '0', '7': '9', '6': '10', '9': '7', '8': '8'}
+Timestamp: 302
+Timestamp: 303
+Timestamp: 304
+Timestamp: 305
+Timestamp: 306
+Timestamp: 307
+Timestamp: 308
+Timestamp: 309
+Timestamp: 310
+Timestamp: 311
+Timestamp: 312
+Timestamp: 313
+Timestamp: 314
+Timestamp: 315
+Timestamp: 316
+Timestamp: 317
+Timestamp: 318
+Timestamp: 319
+Timestamp: 320
+Timestamp: 321
+Timestamp: 322
+Timestamp: 323
+Miss: 6
+DEBUGMISS: 323.00
+DIFF Miss 6
+Timestamp: 324
+Miss: 6
+DEBUGMISS: 324.00
+DIFF Miss 6
+Timestamp: 325
+Miss: 6
+DEBUGMISS: 325.00
+DIFF Miss 6
+Timestamp: 326
+Miss: 6
+DEBUGMISS: 326.00
+DIFF Miss 6
+Timestamp: 327
+Miss: 6
+DEBUGMISS: 327.00
+DIFF Miss 6
+Timestamp: 328
+Miss: 6
+DEBUGMISS: 328.00
+DIFF Miss 6
+Timestamp: 329
+Miss: 6
+DEBUGMISS: 329.00
+DIFF Miss 6
+Timestamp: 330
+Miss: 6
+DEBUGMISS: 330.00
+DIFF Miss 6
+Timestamp: 331
+Look ma! We got a non-recoverable mismatch over here! (5-1) -> (6-1)
+Correspondence 6-1 contradicts mapping 5-1. Counting as mismatch and updating mapping.
+Look, mismatches differ: g 6 b 5  other 10
+{'10': '6', '1': '17', '0': '4', '3': '18', '2': '2', '5': '1', '4': '10', '7': '15', '6': '1', '9': '7', '8': '8'}
+{'11': '7', '10': '4', '15': '7', '17': '1', '18': '3', '1': '6', '0': '5', '3': '3', '2': '2', '5': '1', '4': '0', '7': '9', '6': '10', '9': '7', '8': '8'}
+Miss: 5
+DEBUGMISS: 331.00
+DIFF Miss 5
+Timestamp: 332
+Look ma! We got a recoverable mismatch over here! (5-1) -> (5-19)
+Look, mismatches differ: g 7 b 5  other 10
+{'10': '6', '1': '17', '0': '4', '3': '18', '2': '2', '5': '19', '4': '10', '7': '15', '6': '1', '9': '7', '8': '8'}
+{'11': '7', '10': '4', '15': '7', '17': '1', '19': '5', '18': '3', '1': '6', '0': '5', '3': '3', '2': '2', '5': '1', '4': '0', '7': '9', '6': '10', '9': '7', '8': '8'}
+Timestamp: 333
+Timestamp: 334
+Timestamp: 335
+Timestamp: 336
+Timestamp: 337
+Miss: 8
+DEBUGMISS: 337.00
+DIFF Miss 8
+Timestamp: 338
+Timestamp: 339
+Timestamp: 340
+Timestamp: 341
+Timestamp: 342
+Timestamp: 343
+Timestamp: 344
+Timestamp: 345
+Timestamp: 346
+Timestamp: 347
+Timestamp: 348
+Look ma! We got a non-recoverable mismatch over here! (7-15) -> (8-15)
+Correspondence 8-15 contradicts mapping 7-15. Counting as mismatch and updating mapping.
+Ground truths 8 and 8 are DCO. Not considering for mismatch.
+Look, mismatches differ: g 7 b 6  other 11
+{'10': '6', '1': '17', '0': '4', '3': '18', '2': '2', '5': '19', '4': '10', '7': '15', '6': '1', '9': '7', '8': '15'}
+{'11': '7', '10': '4', '15': '8', '17': '1', '19': '5', '18': '3', '1': '6', '0': '5', '3': '3', '2': '2', '5': '1', '4': '0', '7': '9', '6': '10', '9': '7', '8': '8'}
+Miss: 7
+DEBUGMISS: 348.00
+DIFF Miss 7
+Timestamp: 349
+Miss: 7
+DEBUGMISS: 349.00
+DIFF Miss 7
+Timestamp: 350
+Miss: 7
+DEBUGMISS: 350.00
+DIFF Miss 7
+Timestamp: 351
+Look ma! We got a recoverable mismatch over here! (7-15) -> (7-20)
+Look, mismatches differ: g 8 b 6  other 11
+{'10': '6', '1': '17', '0': '4', '3': '18', '2': '2', '5': '19', '4': '10', '7': '20', '6': '1', '9': '7', '8': '15'}
+{'11': '7', '10': '4', '15': '8', '17': '1', '19': '5', '18': '3', '20': '7', '1': '6', '0': '5', '3': '3', '2': '2', '5': '1', '4': '0', '7': '9', '6': '10', '9': '7', '8': '8'}
+Timestamp: 352
+Timestamp: 353
+Timestamp: 354
+Timestamp: 355
+Timestamp: 356
+Timestamp: 357
+Timestamp: 358
+Timestamp: 359
+Timestamp: 360
+Timestamp: 361
+Timestamp: 362
+Timestamp: 363
+Timestamp: 364
+Timestamp: 365
+Timestamp: 366
+Timestamp: 367
+Timestamp: 368
+Timestamp: 369
+Timestamp: 370
+Timestamp: 371
+Timestamp: 372
+Timestamp: 373
+Timestamp: 374
+Timestamp: 375
+Timestamp: 376
+Timestamp: 377
+Timestamp: 378
+Timestamp: 379
+Timestamp: 380
+Timestamp: 381
+Timestamp: 382
+Miss: 7
+DEBUGMISS: 382.00
+DIFF Miss 7
+Timestamp: 383
+Miss: 7
+DEBUGMISS: 383.00
+DIFF Miss 7
+Timestamp: 384
+Miss: 7
+DEBUGMISS: 384.00
+DIFF Miss 7
+Timestamp: 385
+Timestamp: 386
+Miss: 9
+DEBUGMISS: 386.00
+DIFF Miss 9
+Timestamp: 387
+Miss: 9
+DEBUGMISS: 387.00
+DIFF Miss 9
+Timestamp: 388
+Miss: 9
+DEBUGMISS: 388.00
+DIFF Miss 9
+Timestamp: 389
+Miss: 9
+DEBUGMISS: 389.00
+DIFF Miss 9
+Timestamp: 390
+Miss: 9
+DEBUGMISS: 390.00
+DIFF Miss 9
+Timestamp: 391
+Miss: 9
+DEBUGMISS: 391.00
+DIFF Miss 9
+Timestamp: 392
+Miss: 9
+DEBUGMISS: 392.00
+DIFF Miss 9
+Timestamp: 393
+Miss: 9
+DEBUGMISS: 393.00
+DIFF Miss 9
+Timestamp: 394
+Miss: 9
+DEBUGMISS: 394.00
+DIFF Miss 9
+Timestamp: 395
+Miss: 9
+DEBUGMISS: 395.00
+DIFF Miss 9
+Timestamp: 396
+Miss: 9
+DEBUGMISS: 396.00
+DIFF Miss 9
+Timestamp: 397
+Miss: 9
+DEBUGMISS: 397.00
+DIFF Miss 9
+Timestamp: 398
+Timestamp: 399
+Timestamp: 400
+Timestamp: 401
+Timestamp: 402
+Miss: 3
+DEBUGMISS: 402.00
+DIFF Miss 3
+Timestamp: 403
+Miss: 3
+DEBUGMISS: 403.00
+DIFF Miss 3
+Timestamp: 404
+Miss: 3
+DEBUGMISS: 404.00
+DIFF Miss 3
+Timestamp: 405
+Miss: 3
+DEBUGMISS: 405.00
+DIFF Miss 3
+Timestamp: 406
+Miss: 3
+DEBUGMISS: 406.00
+DIFF Miss 3
+Timestamp: 407
+Miss: 3
+DEBUGMISS: 407.00
+DIFF Miss 3
+Timestamp: 408
+Miss: 3
+DEBUGMISS: 408.00
+DIFF Miss 3
+Timestamp: 409
+Miss: 3
+DEBUGMISS: 409.00
+DIFF Miss 3
+Timestamp: 410
+Miss: 3
+DEBUGMISS: 410.00
+DIFF Miss 3
+Timestamp: 411
+Miss: 3
+DEBUGMISS: 411.00
+DIFF Miss 3
+Timestamp: 412
+Miss: 3
+DEBUGMISS: 412.00
+DIFF Miss 3
+Timestamp: 413
+Miss: 3
+DEBUGMISS: 413.00
+DIFF Miss 3
+Timestamp: 414
+Miss: 3
+DEBUGMISS: 414.00
+DIFF Miss 3
+Timestamp: 415
+Miss: 3
+DEBUGMISS: 415.00
+DIFF Miss 3
+Timestamp: 416
+Timestamp: 417
+Timestamp: 418
+Timestamp: 419
+Timestamp: 420
+Timestamp: 421
+Timestamp: 422
+Timestamp: 423
+Timestamp: 424
+Timestamp: 425
+Timestamp: 426
+Timestamp: 427
+Timestamp: 428
+Timestamp: 429
+Timestamp: 430
+Timestamp: 431
+Timestamp: 432
+Timestamp: 433
+Timestamp: 434
+Timestamp: 435
+Timestamp: 436
+Timestamp: 437
+Timestamp: 438
+Timestamp: 439
+Timestamp: 440
+Timestamp: 441
+Timestamp: 442
+Timestamp: 443
+Timestamp: 444
+Timestamp: 445
+Timestamp: 446
+Miss: 4
+DEBUGMISS: 446.00
+DIFF Miss 4
+Timestamp: 447
+Timestamp: 448
+Timestamp: 449
+Miss: 4
+DEBUGMISS: 449.00
+DIFF Miss 4
+Timestamp: 450
+Look ma! We got a recoverable mismatch over here! (3-18) -> (3-21)
+Correspondence 3-21 contradicts mapping 3-18. Counting as mismatch and updating mapping.
+Look, mismatches differ: g 9 b 6  other 12
+{'10': '6', '1': '17', '0': '4', '3': '21', '2': '2', '5': '19', '4': '10', '7': '20', '6': '1', '9': '7', '8': '15'}
+{'11': '7', '10': '4', '15': '8', '21': '3', '17': '1', '19': '5', '18': '3', '20': '7', '1': '6', '0': '5', '3': '3', '2': '2', '5': '1', '4': '0', '7': '9', '6': '10', '9': '7', '8': '8'}
+Miss: 4
+DEBUGMISS: 450.00
+DIFF Miss 4
+Timestamp: 451
+Miss: 4
+DEBUGMISS: 451.00
+DIFF Miss 4
+Timestamp: 452
+Miss: 4
+DEBUGMISS: 452.00
+DIFF Miss 4
+Timestamp: 453
+Miss: 4
+DEBUGMISS: 453.00
+DIFF Miss 4
+Timestamp: 454
+Miss: 4
+DEBUGMISS: 454.00
+DIFF Miss 4
+Timestamp: 455
+Miss: 4
+DEBUGMISS: 455.00
+DIFF Miss 4
+Timestamp: 456
+Miss: 4
+DEBUGMISS: 456.00
+DIFF Miss 4
+Timestamp: 457
+Miss: 4
+DEBUGMISS: 457.00
+DIFF Miss 4
+Timestamp: 458
+Miss: 4
+DEBUGMISS: 458.00
+DIFF Miss 4
+Timestamp: 459
+Miss: 4
+DEBUGMISS: 459.00
+DIFF Miss 4
+Timestamp: 460
+Miss: 4
+DEBUGMISS: 460.00
+DIFF Miss 4
+Timestamp: 461
+Miss: 4
+DEBUGMISS: 461.00
+DIFF Miss 4
+Timestamp: 462
+Miss: 4
+DEBUGMISS: 462.00
+DIFF Miss 4
+Timestamp: 463
+Timestamp: 464
+Miss: 2
+DEBUGMISS: 464.00
+DIFF Miss 2
+Timestamp: 465
+Miss: 2
+DEBUGMISS: 465.00
+DIFF Miss 2
+Timestamp: 466
+Miss: 2
+DEBUGMISS: 466.00
+DIFF Miss 2
+Timestamp: 467
+Miss: 2
+DEBUGMISS: 467.00
+DIFF Miss 2
+Timestamp: 468
+Timestamp: 469
+Miss: 4
+DEBUGMISS: 469.00
+DIFF Miss 4
+Timestamp: 470
+Miss: 1
+DEBUGMISS: 470.00
+DIFF Miss 1
+Miss: 4
+DEBUGMISS: 470.00
+DIFF Miss 4
+Timestamp: 471
+Miss: 1
+DEBUGMISS: 471.00
+DIFF Miss 1
+Miss: 4
+DEBUGMISS: 471.00
+DIFF Miss 4
+Timestamp: 472
+Miss: 1
+DEBUGMISS: 472.00
+DIFF Miss 1
+Miss: 4
+DEBUGMISS: 472.00
+DIFF Miss 4
+Timestamp: 473
+Miss: 1
+DEBUGMISS: 473.00
+DIFF Miss 1
+Miss: 4
+DEBUGMISS: 473.00
+DIFF Miss 4
+Timestamp: 474
+Miss: 1
+DEBUGMISS: 474.00
+DIFF Miss 1
+Timestamp: 475
+Miss: 1
+DEBUGMISS: 475.00
+DIFF Miss 1
+Miss: 10
+DEBUGMISS: 475.00
+DIFF Miss 10
+Timestamp: 476
+Look ma! We got a recoverable mismatch over here! (1-17) -> (1-22)
+Correspondence 1-22 contradicts mapping 1-17. Counting as mismatch and updating mapping.
+Look, mismatches differ: g 10 b 6  other 13
+{'10': '6', '1': '22', '0': '4', '3': '21', '2': '2', '5': '19', '4': '10', '7': '20', '6': '1', '9': '7', '8': '15'}
+{'11': '7', '10': '4', '15': '8', '21': '3', '17': '1', '19': '5', '18': '3', '22': '1', '20': '7', '1': '6', '0': '5', '3': '3', '2': '2', '5': '1', '4': '0', '7': '9', '6': '10', '9': '7', '8': '8'}
+Miss: 10
+DEBUGMISS: 476.00
+DIFF Miss 10
+Timestamp: 477
+Miss: 10
+DEBUGMISS: 477.00
+DIFF Miss 10
+Timestamp: 478
+Miss: 10
+DEBUGMISS: 478.00
+DIFF Miss 10
+Timestamp: 479
+Miss: 4
+DEBUGMISS: 479.00
+DIFF Miss 4
+Timestamp: 480
+Miss: 4
+DEBUGMISS: 480.00
+DIFF Miss 4
+Timestamp: 481
+Timestamp: 482
+Timestamp: 483
+Miss: 4
+DEBUGMISS: 483.00
+DIFF Miss 4
