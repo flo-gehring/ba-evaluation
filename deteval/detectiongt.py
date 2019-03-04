@@ -13,7 +13,7 @@ def get_into_dir(directory_name, from_dir=os.path.curdir):
         os.mkdir(directory_name)
     os.chdir(directory_name)
 
-def create_dets(infile, skip_frames=0):
+def create_dets(infile, skip_frames=0, bystanderfile=None):
     files = list()
     if type(infile) is list:
         for filename in infile:
@@ -23,6 +23,13 @@ def create_dets(infile, skip_frames=0):
 
     json_objects = [json.load(f) for f in files]
 
+    bystander_doc = None
+    if bystanderfile is not None:
+        bystander_doc = CVATDocument(bystanderfile)
+        bystander_doc.parse()
+
+
+
     unified = dict()
     for det_files in json_objects:
         for entry in det_files:
@@ -31,7 +38,18 @@ def create_dets(infile, skip_frames=0):
                 unified[frame_no] = list()
 
             for detection in entry['detections']:
+
+                #Skip if Detection is not a person
                 if 'classID' in detection and detection['classID'] != 0:
+                    continue
+
+                # Skip if detection is bystander
+                if bystander_doc is not None and bystander_doc.at_frame_in_region(frame_no,
+                                                                                  detection['x'],
+                                                                                  detection['y'],
+                                                                                  detection['width'],
+                                                                                  detection['height']):
+                    print("Skipped Bystander")
                     continue
 
                 separator = ' '
@@ -113,7 +131,7 @@ def create_gt(infile):
 
 
 
-
+"""
 detections_gt = [
     '/home/flo/PycharmProjects/ba-evaluation/data/cvatgt/TS_10_5.xml',
     '/home/flo/PycharmProjects/ba-evaluation/data/cvatgt/TS_10_5_t01_kv.xml',
@@ -124,20 +142,26 @@ detections_gt = [
 for d in detections_gt:
     create_gt(d)
     os.chdir(os.pardir)
+"""
 
 
-
-detection_files_YOLO = [
+detection_files_YOLO_TS_10_05 = {
     '/home/flo/PycharmProjects/ba-evaluation/data/detections/YOLO/TS_10_5_cubemap.json',
     '/home/flo/PycharmProjects/ba-evaluation/data/detections/YOLO/TS_10_5_equator_line.json',
-    '/home/flo/PycharmProjects/ba-evaluation/data/detections/YOLO/TS_10_5_t01_cubemap.json',
-    '/home/flo/PycharmProjects/ba-evaluation/data/detections/YOLO/TS_10_5_t01_equator_line.json',
+
+}
+detection_files_YOLO_Video2 = [
     '/home/flo/PycharmProjects/ba-evaluation/data/detections/YOLO/Video2_cubemap.json',
     '/home/flo/PycharmProjects/ba-evaluation/data/detections/YOLO/Video2_equator_line.json'
+    ]
+detection_files_YOLE = [
+    '/home/flo/PycharmProjects/ba-evaluation/data/detections/YOLO/TS_10_5_t01_cubemap.json',
+    '/home/flo/PycharmProjects/ba-evaluation/data/detections/YOLO/TS_10_5_t01_equator_line.json'
 ]
-detection_files_MASKRCNN = [
+
+detection_files_MASKRCNN_TS_10_5= [
     '/home/flo/PycharmProjects/ba-evaluation/data/detections/maskrcnn/TS_10_5_whole_frame.json',
-    '/home/flo/PycharmProjects/ba-evaluation/data/detections/maskrcnn/video2_whole_frame.json',
+
     [
         '/home/flo/PycharmProjects/ba-evaluation/data/detections/maskrcnn/TS_10_5_cubemap/0_cubemap_ts_10.json',
         '/home/flo/PycharmProjects/ba-evaluation/data/detections/maskrcnn/TS_10_5_cubemap/1_cubemap_ts_10.json',
@@ -146,9 +170,24 @@ detection_files_MASKRCNN = [
     ]
 ]
 
-"""
-for d in detection_files_MASKRCNN:
-    create_dets(d)
+detection_files_MASKRCNN_Video2 = [
+    '/home/flo/PycharmProjects/ba-evaluation/data/detections/maskrcnn/video2_whole_frame.json'
+]
+
+
+def create_files(det_files, bystandefile, dirname):
+    get_into_dir(dirname)
+    for d in det_files:
+        create_dets(d, bystanderfile=bystandefile)
+        os.chdir(os.pardir)
     os.chdir(os.pardir)
 
-"""
+
+create_files(detection_files_YOLO_TS_10_05,
+             '/home/flo/PycharmProjects/ba-evaluation/data/bystanders/TS_10_05 Bystanders.xml', 'YOLO')
+create_files(detection_files_MASKRCNN_TS_10_5,
+             '/home/flo/PycharmProjects/ba-evaluation/data/bystanders/TS_10_05 Bystanders.xml', 'Maskrcnn')
+create_files(detection_files_YOLO_Video2,
+             '/home/flo/PycharmProjects/ba-evaluation/data/bystanders/Video_2_Bystanders.xml', 'YOLO')
+create_files(detection_files_MASKRCNN_Video2,
+             '/home/flo/PycharmProjects/ba-evaluation/data/bystanders/Video_2_Bystanders.xml', 'Maskrcnn')
