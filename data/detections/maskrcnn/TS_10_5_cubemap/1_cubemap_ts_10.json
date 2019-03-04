@@ -1,4 +1,4 @@
-{ "frame":0, 
+[{ "frame":0,
  "detections": [ { "x": 2445, "y":974, "width": 20, "height": 68, "confidence": 0.428082}] }, { "frame":1, 
  "detections": [ { "x": 2445, "y":972, "width": 20, "height": 68, "confidence": 0.419809}] }, { "frame":2, 
  "detections": [ { "x": 2445, "y":972, "width": 20, "height": 68, "confidence": 0.429381}] }, { "frame":3, 
@@ -583,5 +583,4 @@
  "detections": [ { "x": 2477, "y":976, "width": 27, "height": 80, "confidence": 0.431737}] }, { "frame":375, 
  "detections": [ { "x": 2479, "y":978, "width": 27, "height": 78, "confidence": 0.421546}] }, { "frame":376, 
  "detections": [ { "x": 2898, "y":971, "width": 30, "height": 80, "confidence": 0.357849}] }, { "frame":377, 
- "detections": [ { "x": 2903, "y":969, "width": 29, "height": 67, "confidence": 0.442707}] }, { "frame":378, 
- "detections": [ { "x": 2903, "y":969, "width"
+ "detections": [ { "x": 2903, "y":969, "width": 29, "height": 67, "confidence": 0.442707}] } ]

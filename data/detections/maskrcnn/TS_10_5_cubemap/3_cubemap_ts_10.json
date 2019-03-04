@@ -1,4 +1,4 @@
-{ "frame":0, 
+[{ "frame":0,
  "detections": [ ] }, { "frame":1, 
  "detections": [ ] }, { "frame":2, 
  "detections": [ ] }, { "frame":3, 
@@ -457,5 +457,4 @@
  "detections": [ ] }, { "frame":369, 
  "detections": [ ] }, { "frame":370, 
  "detections": [ ] }, { "frame":371, 
- "detections": [ ] }, { "frame":372, 
- "detections": [ ] }, { "fr
+ "detections": [ ] }]

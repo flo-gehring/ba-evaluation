@@ -1,4 +1,4 @@
-{ "frame":0, 
+[{ "frame":0,
  "detections": [ ] }, { "frame":1, 
  "detections": [ { "x": 2343, "y":982, "width": 16, "height": 32, "confidence": 0.314499}] }, { "frame":2, 
  "detections": [ ] }, { "frame":3, 
@@ -245,5 +245,4 @@
 { "x": 2373, "y":975, "width": 13, "height": 47, "confidence": 0.422756},
 { "x": 2381, "y":970, "width": 10, "height": 47, "confidence": 0.406455}] }, { "frame":222, 
  "detections": [ { "x": 2281, "y":981, "width": 22, "height": 59, "confidence": 0.532554},
-{ "x": 2379, "y":970, "width": 10, "height": 43, "confidence": 0.414039}] }, { "frame":223, 
- "detections": [ { "x": 2275, "y":98
+{ "x": 2379, "y":970, "width": 10, "height": 43, "confidence": 0.414039}] }]

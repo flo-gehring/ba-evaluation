@@ -1,4 +1,4 @@
-{ "frame":0, 
+[{ "frame":0,
  "detections": [ ] }, { "frame":1, 
  "detections": [ ] }, { "frame":2, 
  "detections": [ ] }, { "frame":3, 
@@ -372,5 +372,4 @@
  "detections": [ { "x": 306, "y":974, "width": 40, "height": 49, "confidence": 0.458583}] }, { "frame":363, 
  "detections": [ ] }, { "frame":364, 
  "detections": [ ] }, { "frame":365, 
- "detections": [ ] }, { "frame":366, 
- "detections": [ { "x": 304, "y":968, "width": 
+ "detections": [ ] }]
