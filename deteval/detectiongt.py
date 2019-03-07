@@ -93,12 +93,18 @@ def line_formatter( frame, id, bb_left, bb_top, bb_width, bb_height, bb_occluded
     )
 
 
-def create_gt(infile):
+def create_gt(infile, bystander_path=None):
     gt_doc = CVATDocument(infile)
     gt_doc.parse()
 
     dir_name = get_filename(infile)
     get_into_dir(dir_name)
+
+    bystander_doc = None
+    if bystander_path is not None:
+        bystander_doc = CVATDocument(bystander_path)
+        bystander_doc.parse()
+
 
     for frame in range(0, gt_doc.max_frame + 1):
 
@@ -108,11 +114,22 @@ def create_gt(infile):
             if frame in track.tracked_elements:
                 frame_info = track.tracked_elements[frame].attributes
 
+                # Skip occluded
                 if not frame_info['occluded'] == "1":
                     bb_left = frame_info['xtl']
                     bb_top = frame_info['ytl']
                     bb_right = frame_info['xbr']
                     bb_bottom = frame_info['ybr']
+
+                    # Skip bystanders
+                    if bystander_doc is not None:
+                        if bystander_doc.at_frame_in_region(frame,
+                                                        float(bb_left), float(bb_top),
+                                                        float(bb_right) - float(bb_left),
+                                                        float(bb_top) - float(bb_right)):
+                            print("skip bystander")
+                            continue
+
                     object_line = ' '.join([
                         'person',
                         bb_left,
@@ -131,23 +148,27 @@ def create_gt(infile):
 
 
 
-"""
+
 detections_gt = [
-    '/home/flo/PycharmProjects/ba-evaluation/data/cvatgt/TS_10_5.xml',
-    '/home/flo/PycharmProjects/ba-evaluation/data/cvatgt/TS_10_5_t01_kv.xml',
+    '/home/flo/PycharmProjects/ba-evaluation/data/cvatgt/TS_10_05_ohne_bs.xml',
+    '/home/flo/PycharmProjects/ba-evaluation/data/cvatgt/TS_10_05_t01_ohne_bs.xml',
     '/home/flo/PycharmProjects/ba-evaluation/data/cvatgt/Video2.xml'
 
 ]
 
-for d in detections_gt:
-    create_gt(d)
+"""
+for i in range(0, len(detections_gt)):
+    create_gt(detections_gt[i])
     os.chdir(os.pardir)
+
+
 """
 
 
 detection_files_YOLO_TS_10_05 = {
     '/home/flo/PycharmProjects/ba-evaluation/data/detections/YOLO/TS_10_5_cubemap.json',
     '/home/flo/PycharmProjects/ba-evaluation/data/detections/YOLO/TS_10_5_equator_line.json',
+    '/home/flo/PycharmProjects/ba-evaluation/data/detections/YOLO/ts_10_5_yolo_whole_frame.json'
 
 }
 detection_files_YOLO_Video2 = [
@@ -175,6 +196,9 @@ detection_files_MASKRCNN_Video2 = [
 ]
 
 
+create_dets("/home/flo/PycharmProjects/ba-evaluation/data/detections/YOLO/WholeFrame/TS_10_5.json",
+            bystanderfile='/home/flo/PycharmProjects/ba-evaluation/data/bystanders/TS_10_05 Bystanders.xml')
+
 def create_files(det_files, bystandefile, dirname):
     get_into_dir(dirname)
     for d in det_files:
@@ -183,6 +207,12 @@ def create_files(det_files, bystandefile, dirname):
     os.chdir(os.pardir)
 
 
+
+
+"""
+
+create_dets('/home/flo/PycharmProjects/ba-evaluation/data/detections/YOLO/ts_10_5_yolo_whole_frame.json',
+            bystanderfile='/home/flo/PycharmProjects/ba-evaluation/data/bystanders/TS_10_05 Bystanders.xml')
 create_files(detection_files_YOLO_TS_10_05,
              '/home/flo/PycharmProjects/ba-evaluation/data/bystanders/TS_10_05 Bystanders.xml', 'YOLO')
 create_files(detection_files_MASKRCNN_TS_10_5,
@@ -191,3 +221,4 @@ create_files(detection_files_YOLO_Video2,
              '/home/flo/PycharmProjects/ba-evaluation/data/bystanders/Video_2_Bystanders.xml', 'YOLO')
 create_files(detection_files_MASKRCNN_Video2,
              '/home/flo/PycharmProjects/ba-evaluation/data/bystanders/Video_2_Bystanders.xml', 'Maskrcnn')
+"""

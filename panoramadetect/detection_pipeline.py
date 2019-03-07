@@ -17,7 +17,7 @@ from setup_tracker_directories import get_filename
 
 # construct the argument parse and parse the arguments
 
-mask_rcnn_base_path = "\\".join([ "mask-rcnn", "mask-rcnn-coco"])
+mask_rcnn_base_path = "\\".join(["mask-rcnn", "mask-rcnn-coco"])
 
 
 print(cv2.getBuildInformation())

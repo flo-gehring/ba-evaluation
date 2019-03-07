@@ -90,7 +90,7 @@ class CVATDocument:
                         self.tracks.append(new_track)
 
 
-        def __iterate_frame_wise(self, line_formatter, output_path=''):
+        def iterate_frame_wise(self, line_formatter, output_path=''):
             """
             Iterate for framewise over the tracked object and print the strings produced by line_formatter.
             If an output path is given it will be printed to the file, else to the console.
@@ -123,6 +123,25 @@ class CVATDocument:
                                 output_file.write(formatted_line)
                         else:
                                 print(formatted_line)
+
+
+        def at_frame_in_region(self, frame, x, y, width, height):
+            """
+            Returns True if the given coordinates fall into a track on the specified frame.
+            :param frame:
+            :param x:
+            :param y:
+            :param width:
+            :param height:
+            :return:
+            """
+            for track in self.tracks:
+                if frame in track.tracked_elements:
+                    element = track.tracked_elements[frame]
+                    if element.xtl <= x and element.ytl <= y and element.xbr >= x + width and element.ybr >= y + height:
+                        return True
+            return False
+
 
         def to_format(self, format_id, filepath='',  dets_only=False, include_occluded=True, delimiter=', '):
             """
@@ -205,7 +224,7 @@ class CVATDocument:
             formatter = lambda frame, index, bb_left, bb_top, bb_width, bb_height, bb_occluded: '\t'.join(
                 [str(x) for x in [frame, index, bb_left, bb_top, bb_width, bb_height, 1, 1, 0 if bb_occluded else 1, 0]]
             ) + linesep
-            self.__iterate_frame_wise(formatter, doc_path)
+            self.iterate_frame_wise(formatter, doc_path)
 
         def sloth_format_json_factory(self, groundtruth=False):
             """
@@ -305,7 +324,6 @@ class CVATDocument:
             self.tracks = list()
             self.doc_tree = None
             self.max_frame = -1
-            input_file = open(docpath, 'r')
 
             with open(docpath, 'r') as csvfile:
                 reader = csv.reader(csvfile, delimiter=delimiter)
@@ -330,7 +348,7 @@ class CVATDocument:
 
                     new_box = Box()
                     current_track.tracked_elements[frame] = new_box
-                    new_box.xtl = bb_top
+                    new_box.xtl = float(bb_top)
                     new_box.ybr = (float(bb_height) + float(bb_top))
                     new_box.xbr = (float(bb_left) + float(bb_width))
                     new_box.ytl = float(bb_top)

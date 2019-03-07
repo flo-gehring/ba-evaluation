@@ -98,9 +98,9 @@ def get_smot_tracker_data(path_to_mat, cvat_object):
 
 
 def create_smot_mot_fmt_dir(
-        gt_data_path="/home/flo/CLionProjects/Panorama2Cubemap/data/Annotations/2_TS_10_05.xml",
-        matlab_result='/home/flo/Workspace/OtherTrackers/smot/smot_data/TS_10_5/ihtls/TS_10_5_ihtls_fn.mat',
-        mot_fmt_path='/home/flo/PycharmProjects/ba-evaluation/data/mot_fmt_results/smot_TS_10_5.txt'):
+        gt_data_path="/home/flo/PycharmProjects/ba-evaluation/data/cvatgt/Video2.xml",
+        matlab_result='/home/flo/Workspace/OtherTrackers/smot/smot_data/Video2/ihtls/Video2_ihtls_fn.mat',
+        mot_fmt_path='/home/flo/PycharmProjects/ba-evaluation/data/mot_fmt_results/Video2.txt'):
     # "/home/flo/CLionProjects/Panorama2Cubemap/data/Annotations/2_TS_10_05.xml"
     cvat_doc = CVATDocument(gt_data_path)
     cvat_doc.parse()
@@ -166,14 +166,21 @@ def create_evaluation_test_directory(eval_root, path_to_mot_fmt_result, path_to_
     result_doc.to_mot_metrics_fmt(sequence_name + '.txt')
 
 if __name__ == "__main__":
+
+    #create_smot_mot_fmt_dir()
+
     cvat_doc = CVATDocument("/home/flo/CLionProjects/Panorama2Cubemap/data/Annotations/2_TS_10_05.xml")
     cvat_doc.parse()
+    """
     output_doc = get_smot_tracker_data(
         '/home/flo/Workspace/OtherTrackers/smot/smot_data/TS_10_5/ihtls/TS_10_5_ihtls_fn.mat'
         , cvat_doc)
     output_doc.to_format("MOT16", 'data/mot_fmt_results/smot_TS_10_5.txt')
+    """
 
     data_directory = "/home/flo/PycharmProjects/ba-evaluation/data/"
 
-    create_evaluation_test_directory(data_directory + "eval_root/", data_directory + "mot_fmt_results/smot_TS_10_5.txt",
-                                 data_directory + "cvatgt/TS_10_5.xml", "SMOT", "TS_10_5", bystander_path="/home/flo/PycharmProjects/ba-evaluation/data/bystanders/TS_10_05 Bystanders.xml")
+    create_evaluation_test_directory(data_directory + "eval_root/", data_directory + "mot_fmt_results/smot_Video2.txt",
+                        data_directory + "cvatgt/Video2.xml", "DEEPSORT", "Video2",
+                        bystander_path="/home/flo/PycharmProjects/ba-evaluation/data/bystanders/Video_2_Bystanders.xml")
+
