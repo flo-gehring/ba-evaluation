@@ -8,9 +8,9 @@
     "hypothesis tracks": 25, 
     "lonely ground truth tracks": 0, 
     "lonely hypothesis tracks": 0, 
-    "mismatches": 25, 
-    "misses": 429, 
+    "mismatches": 22, 
+    "misses": 386, 
     "non-recoverable mismatches": 12, 
-    "recoverable mismatches": 21, 
-    "total overlap": 3472.0236903172813
+    "recoverable mismatches": 19, 
+    "total overlap": 3452.6594429378056
 }
