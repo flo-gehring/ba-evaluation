@@ -125,23 +125,18 @@ def setup_mot_doc(filepath, bystander_doc=None):
     return cvat_doc
 
 
-#tracker_names = ['SMOT', 'DEEPSORT', ]
-tracker_names = list()
+tracker_names = ['DEEPSORT', 'SMOT', 'PANORAMA_TRACKER']
 
-create_pymot_eval_directory('/home/flo/PycharmProjects/ba-evaluation/data/cvatgt/Video2.xml',
-        '/home/flo/PycharmProjects/ba-evaluation/data/mot_fmt_results/panorama_tracker_Video2.txt',
-        '/home/flo/PycharmProjects/ba-evaluation/data/pymot_eval',
-        'PANORAMA_TRACKER',
-        'Video2',
-        path_to_bystanders='/home/flo/PycharmProjects/ba-evaluation/data/bystanders/Video_2_Bystanders.xml')
+
+
 
 for name in tracker_names:
 
     create_pymot_eval_directory(
-        '/home/flo/PycharmProjects/ba-evaluation/data/cvatgt/Video2.xml',
-        '/home/flo/PycharmProjects/ba-evaluation/data/mot_fmt_results/' + name.lower() + '_Video2.txt',
+        '/home/flo/PycharmProjects/ba-evaluation/data/cvatgt/TS_10_05_ohne_bs.xml',
+        '/home/flo/PycharmProjects/ba-evaluation/data/mot_fmt_results/' + name.lower() + '_TS_10_5.txt',
         '/home/flo/PycharmProjects/ba-evaluation/data/pymot_eval',
         name,
-        'Video2',
-        path_to_bystanders='/home/flo/PycharmProjects/ba-evaluation/data/bystanders/Video_2_Bystanders.xml')
-# path_to_source_vid='/home/flo/PycharmProjects/ba-evaluation/data/videos/Video2.mp4')
+        'TS_10_5',
+        path_to_bystanders='/home/flo/PycharmProjects/ba-evaluation/data/bystanders/TS_10_05 Bystanders.xml',
+        path_to_source_vid='/home/flo/PycharmProjects/ba-evaluation/data/videos/TS_10_5.mp4')

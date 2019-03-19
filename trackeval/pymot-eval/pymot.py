@@ -251,12 +251,16 @@ class MOTEvaluation:
 
             # Count "recoverable" and "non-recoverable" mismatches
             # "recoverable" mismatches
+            recoverable_followed_by = False
             if gt_id in self.gt_map_ and self.gt_map_[gt_id] != hypo_id and not groundtruths[gt_index].get("dco",False):
                 LOG.log(TRACK_INFO_NUM, "Look ma! We got a recoverable mismatch over here! (%s-%s) -> (%s-%s)" % (gt_id, self.gt_map_[gt_id], gt_id, hypo_id))
                 self.recoverable_mismatches_ += 1
+                recoverable_followed_by = True
 
             # "non-recoverable" mismatches
             if hypo_id in self.hypo_map_ and self.hypo_map_[hypo_id] != gt_id:
+                if(recoverable_followed_by):
+                    print("Recoverable mm followed by nonrecoverable!")
                 # Do not count non-recoverable mismatch, if both old ground truth and current ground truth are DCO.
                 old_gt_id = self.hypo_map_[hypo_id]
                 old_gt_dco = filter(lambda g: g["id"] == old_gt_id and g.get("dco",False), groundtruths)
@@ -290,7 +294,7 @@ class MOTEvaluation:
                     if (mapping_gt_id == gt_id and mapping_hypo_id != hypo_id)\
                     or (mapping_gt_id != gt_id and mapping_hypo_id == hypo_id):
                         LOG.log(TRACK_INFO_NUM, "Correspondence %s-%s contradicts mapping %s-%s. Counting as mismatch and updating mapping." % (gt_id, hypo_id, mapping_gt_id, mapping_hypo_id))
-                        mismatcheslist.append("DIFF Mismatch %s-%s -> %s-%s" % (mapping_gt_id, mapping_hypo_id, gt_id, hypo_id))
+                        mismatcheslist.append("DIFF Mismatch %s-%s -> %s-%sl" % (mapping_gt_id, mapping_hypo_id, gt_id, hypo_id))
                         self.mismatches_ = self.mismatches_ + 1
 
                         # find groundtruth and hypothesis with given ids
