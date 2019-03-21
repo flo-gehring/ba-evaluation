@@ -1,0 +1,11 @@
+{
+    "MOTA": 0.1666276620641236, 
+    "MOTP": 0.5346214038293557, 
+    "false positive rate": 0.6288322021998596, 
+    "mismatch rate": 0.008424994149309618, 
+    "miss rate": 0.19611514158670723, 
+    "non-recoverable mismatch rate": 0.005382635150947812, 
+    "recoverable mismatch rate": 0.008190966534051018, 
+    "track precision": 0.88, 
+    "track recall": 1.0
+}

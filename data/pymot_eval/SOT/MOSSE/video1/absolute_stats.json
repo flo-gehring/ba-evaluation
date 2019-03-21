@@ -1,0 +1,16 @@
+{
+    "correspondences": 484, 
+    "covered ground truth tracks": 5, 
+    "covering hypothesis tracks": 16, 
+    "false positives": 126, 
+    "ground truth tracks": 11, 
+    "ground truths": 4273, 
+    "hypothesis tracks": 126, 
+    "lonely ground truth tracks": 6, 
+    "lonely hypothesis tracks": 110, 
+    "mismatches": 10, 
+    "misses": 3306, 
+    "non-recoverable mismatches": 1, 
+    "recoverable mismatches": 10, 
+    "total overlap": 284.056039420216
+}
