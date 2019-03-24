@@ -47,11 +47,11 @@ class Box:
             return (xtl, ytl), (width, height)
 
         def in_area(self, a_xtl, a_ytl, a_width, a_height):
-
-            return a_xtl <= self.xtl \
+            to_return = a_xtl <= self.xtl \
                    and a_ytl <= self.ytl \
                    and a_xtl + a_width >= self.xbr \
                    and a_ytl + a_height >= self.ybr
+            return to_return
 
 
 
@@ -467,6 +467,28 @@ def my_json_to_mot_16_dets(json_filepath, outpath):
             out_file.write(formatted_line)
 
 
+import os
+
+
+def convert_for_mm(filepath):
+    f = open(filepath, "r")
+    output = open(filepath[0:-4]+ ".csv", "w")
+    csvfile = csv.reader(f, delimiter=',')
+    lines_to_write = list()
+    for line in csvfile:
+        to_write = line[0:6]
+        to_write += [1,	1, 1, 0]
+        to_write = map(str, to_write)
+
+        lines_to_write.append(("\t".join(to_write)) + os.linesep)
+
+    output.writelines(lines_to_write)
+
+
+
+
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-f", '--informat', help="Specify the format you want to Convert. "
@@ -511,16 +533,6 @@ if __name__ == "__main__":
 
         elif args.outformat == "SLOTH":
             doc.to_sloth_format(groundtruth=args.gt, output_path=args.outfile)
-
-
-def convert_for_mm(filepath):
-    f = open(filepath, "r")
-    output = open(filepath + ".csv", "w")
-    csvfile = csv.reader(f, delimiter=',')
-    writelines = list()
-    for line in csvfile:
-        outstring = "\t".join((line[0:6]).append([1, 1, line[6], 0]))
-
 
 
 
