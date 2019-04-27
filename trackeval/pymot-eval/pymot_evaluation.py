@@ -127,16 +127,17 @@ def setup_mot_doc(filepath, bystander_doc=None):
 
 tracker_names = ['DEEPSORT', 'SMOT', 'PANORAMA_TRACKER']
 
-sot_tracker_names = ["Boosting", "KCF", "MedianFlow", "MIL", "MOSSE", "TLD"]
+sot_tracker_names = ["Boosting", "KCF", "MedianFlow", "MIL", "MOSSE"]
 video_names = ["video1", "video2"]
 
-videos_to_evalutate = video_names[-1:]
+videos_to_evalutate = []
 
-trackers_to_evaluate = sot_tracker_names[-2:]
+trackers_to_evaluate = tracker_names[2:3]
 
 for video_name in videos_to_evalutate:
     for name in trackers_to_evaluate:
-
+        path_to_source_vid = '/home/flo/PycharmProjects/ba-evaluation/data/videos/TS_10_5.mp4'  \
+            if video_name  == "video1" else '/home/flo/PycharmProjects/ba-evaluation/data/videos/Video2.mp4'
         path_to_bystanders = '/home/flo/PycharmProjects/ba-evaluation/data/bystanders/TS_10_05 Bystanders.xml' \
                     if video_name == "video1" else  \
                     "/home/flo/PycharmProjects/ba-evaluation/data/bystanders/Video_2_Bystanders.xml"
@@ -153,7 +154,16 @@ for video_name in videos_to_evalutate:
                 '/home/flo/PycharmProjects/ba-evaluation/data/pymot_eval/SOT',
                 name,
                 video_name,
-                path_to_bystanders=path_to_bystanders)
+                path_to_bystanders=path_to_bystanders,
+            path_to_source_vid=path_to_source_vid)
         except AssertionError:
             print "Assertion Error."
             continue
+create_pymot_eval_directory(
+                "/home/flo/PycharmProjects/ba-evaluation/data/cvatgt/Video2.xml",
+                "/home/flo/PycharmProjects/ba-evaluation/data/mot_fmt_results/panorama_tracker_Video2.txt",
+                '/home/flo/PycharmProjects/ba-evaluation/data/pymot_eval/SOT',
+                "PANORAMA_TRACKER",
+                "Video2",
+                path_to_bystanders=  "/home/flo/PycharmProjects/ba-evaluation/data/bystanders/Video_2_Bystanders.xml",
+            path_to_source_vid='/home/flo/PycharmProjects/ba-evaluation/data/videos/Video2.mp4')

@@ -196,7 +196,7 @@ detection_files_MASKRCNN_Video2 = [
 ]
 
 
-create_dets("/home/flo/PycharmProjects/ba-evaluation/data/detections/YOLO/WholeFrame/TS_10_5.json",
+create_dets("/home/flo/PycharmProjects/ba-evaluation/data/detections/YOLO/608_cubemap_yolo_TS_10_5.json",
             bystanderfile='/home/flo/PycharmProjects/ba-evaluation/data/bystanders/TS_10_05 Bystanders.xml')
 
 def create_files(det_files, bystandefile, dirname):

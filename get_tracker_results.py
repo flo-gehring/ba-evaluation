@@ -165,7 +165,27 @@ def create_evaluation_test_directory(eval_root, path_to_mot_fmt_result, path_to_
         result_doc.delete_bystanders(bystander_doc)
     result_doc.to_mot_metrics_fmt(sequence_name + '.txt')
 
+
 if __name__ == "__main__":
+    rootdir = '/home/flo/PycharmProjects/ba-evaluation/data/mot_fmt_results/SOT'
+    data_directory = "/home/flo/PycharmProjects/ba-evaluation/data/"
+    mot_fmt_res_dir = data_directory + '/mot_fmt_results/'
+    for subdir, dirs, files in os.walk(rootdir):
+        for file in files:
+            if file[-3:] == "txt":
+                tracker_name = file[0:-11]
+                video_name = file[-10:-4]
+                if video_name == "video2":
+                    create_evaluation_test_directory(data_directory + "eval_root/SOT2/", os.path.join(subdir, file),
+                                                     data_directory + "cvatgt/Video2.xml", tracker_name, "Video2",
+                                                     bystander_path="/home/flo/PycharmProjects/ba-evaluation/data/bystanders/Video_2_Bystanders.xml")
+                else:
+                    create_evaluation_test_directory(data_directory + "eval_root/SOT2/", os.path.join(subdir, file),
+                                                     data_directory + "cvatgt/TS_10_05_ohne_bs.xml", tracker_name, "TS_10_5",
+                                                     bystander_path="/home/flo/PycharmProjects/ba-evaluation/data/bystanders/TS_10_05 Bystanders.xml")
+
+                print tracker_name
+               # convert_for_mm(os.path.join(subdir, file))
 
     #create_smot_mot_fmt_dir()
 
@@ -179,8 +199,22 @@ if __name__ == "__main__":
     """
 
     data_directory = "/home/flo/PycharmProjects/ba-evaluation/data/"
+    mot_fmt_res_dir = data_directory + '/mot_fmt_results/'
+    DEEPSORT = 'DEEPSORT'
+    SMOT = 'SMOT'
+    PANORAMA_TRACKER = 'PANORAMA_TRACKER'
+    ts_10_5 = [(DEEPSORT, 'deepsort_TS_10_5.txt'), (PANORAMA_TRACKER, 'panorama_tracker_TS_10_5.txt'),
+               (SMOT, 'smot_TS_10_5.txt')]
+    video_2 = [(DEEPSORT, 'deepsort_Video2.txt'), (PANORAMA_TRACKER, 'panorama_tracker_Video2.txt'),
+               (SMOT, 'smot_Video2.txt')]
 
-    create_evaluation_test_directory(data_directory + "eval_root/", data_directory + "mot_fmt_results/smot_Video2.txt",
-                        data_directory + "cvatgt/Video2.xml", "DEEPSORT", "Video2",
+    for tracker, filename in video_2:
+
+        create_evaluation_test_directory(data_directory + "eval_root/", mot_fmt_res_dir + filename,
+                        data_directory + "cvatgt/Video2.xml", tracker, "Video2",
                         bystander_path="/home/flo/PycharmProjects/ba-evaluation/data/bystanders/Video_2_Bystanders.xml")
 
+    for tracker, filename in ts_10_5:
+        create_evaluation_test_directory(data_directory + "eval_root/", mot_fmt_res_dir + filename,
+                                         data_directory + "cvatgt/TS_10_05_ohne_bs.xml", tracker, "TS_10_5",
+                                         bystander_path="/home/flo/PycharmProjects/ba-evaluation/data/bystanders/TS_10_05 Bystanders.xml")
